@@ -12,6 +12,23 @@ export default defineConfig({
   ],
   theme: {
     extend: {
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
+      fontFamily: {
+        sans: ['Futura LT Book', 'Source Han Sans SC VF', 'sans-serif'],
+        serif: ['Consolas', 'serif'],
+      },
+      borderRadius: {
+        'md': '4px',
+        'lg': '5px',
+        'xl': '8px',
+        '2xl': '50%',
+      },
       typography: {
         DEFAULT: {
           css: {
