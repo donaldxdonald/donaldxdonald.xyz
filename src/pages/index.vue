@@ -7,12 +7,11 @@ const showBg = ref(false)
 
 <template>
   <div class="main-page">
-    <v-fade-transition mode="in-out">
-      <div v-show="showBg && imgSrc.length" class="bg-wrap">
-        <div class="bg__modal" :style="{'background-color': avgColor}" />
-        <img class="bg__img" :src="imgSrc" alt="">
-      </div>
-    </v-fade-transition>
+    <div v-show="showBg && imgSrc.length" class="bg-wrap">
+      <div class="bg__modal" :style="{'background-color': avgColor}" />
+      <img class="bg__img" :src="imgSrc" alt="">
+    </div>
+    <Introduction></Introduction>
   </div>
 </template>
 
