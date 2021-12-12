@@ -1,0 +1,30 @@
+
+@font-face {
+  font-family: 'Agency FB';
+  font-style: normal;
+  src: local('Agency FB'),
+       url('/src/assets/fonts/AGENCYR.TTF') /* Chrome 26+, Opera 23+, Firefox 39+ */
+     
+}
+
+@font-face {
+  font-family: 'Futura LT Book';
+  font-style: normal;
+  src: local('Futura LT Book'),
+       url('/src/assets/fonts/FuturaLTBook.woff2') format('woff2'),
+       url('/src/assets/fonts/FuturaLTBook.woff') format('woff'),
+       url('/src/assets/fonts/FuturaLTBook.ttf') format('truetype'),
+       url('/src/assets/fonts/FuturaLTBook.svg#FuturaLTBook') format('svg'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+     
+}
+
+@font-face {
+  font-family: 'Futura LT Medium';
+  font-style: normal;
+  src: local('Futura LT Medium'),
+       url('/src/assets/fonts/FuturaLTMedium.woff2') format('woff2'),
+       url('/src/assets/fonts/FuturaLTMedium.woff') format('woff'),
+       url('/src/assets/fonts/FuturaLTMedium.ttf') format('truetype'),
+       url('/src/assets/fonts/FuturaLTMedium.svg#FuturaLTMedium') format('svg');/* Chrome 26+, Opera 23+, Firefox 39+ */
+     
+}

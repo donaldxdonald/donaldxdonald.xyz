@@ -1,8 +1,23 @@
 {
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
   "extends": [
-    "@dndxdnd"
+    "@dndxdnd",
+    "plugin:vue/vue3-recommended"
   ],
   "rules": {
-    "arrow-parens": ["error", "as-needed"]
+    "arrow-parens": ["error", "as-needed"],
+    // Vue
+    "vue/mustache-interpolation-spacing": ["error", "always"],
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": {
+        "max": 2
+      },      
+      "multiline": {
+        "max": 2
+      }
+    }]
   }
 }

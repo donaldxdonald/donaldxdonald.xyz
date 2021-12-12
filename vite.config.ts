@@ -71,6 +71,7 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-icons
     Icons({
+      compiler: 'vue3',
       autoInstall: true,
     }),
 

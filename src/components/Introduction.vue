@@ -1,158 +1,113 @@
 <script setup lang="ts">
+import { reactive, ref, defineProps, computed } from 'vue'
+import { Contact, Keyword } from './common.type'
+import { INTRO } from '~/utils/constant'
 import { contrastTextColor } from '~/utils/utils'
-import {Contact,Keyword} from './common.type'
-  let paragraph: string[][] = reactive([])
+const paragraph: string[] = reactive(INTRO.MAIN_CONTENT.split(' '))
 
-  const props = defineProps({
-    bgColor: {
-      type: String,
-      default: '#fff'
-    }
-  })
+const props = defineProps({
+  bgColor: {
+    type: String,
+    default: '#fff',
+  },
+})
 
-  const bgc = ref('#fff')
+const bgc = ref('#fff')
 
-  const textColor: string = computed(() => {
-    let color = '#333'
-    if (bgc.value !== '') {
-      color = contrastTextColor(bgc.value)
-    }
-    return color
-  })
+const textColor = computed(() => {
+  let color = '#333'
+  if (bgc.value !== '')
+    color = contrastTextColor(bgc.value)
 
-  const contactList: Contact[] = reactive([
-    {
-      icon: 'mdi-github',
-      text: '@donaldxdonald',
-      link: 'https://github.com/donaldxdonald'
-    },
-    {
-      icon: 'mdi-email-outline',
-      text: 'mzhlovefama@hotmail.com',
-      link: 'mailto:mzhlovefama@hotmail.com'
-    }
-  ])
-  const hobbies: Record<string, Keyword> = reactive({
-    programming: {
-      text: 'programming',
-      link: 'http://article.donaldxdonald.xyz'
-    },
-    film: {
-      text: 'film',
-      link: '#'
-    },
-    music: {
-      text: 'music',
-      link: '#'
-    },
-    photo: {
-      text: 'photography',
-      link: '#'
-    }
-  })
+  return color
+})
 
-  const generatePara = () => {
-    const para1 = 'My name is'
-    const para2 = "You can call me 莫志豪 in Chinese. This website is a display of what I've"
-    const para3 = 'Sharing'
-    const para4 = 'experience seems an interesting thing to me. What makes me chill is absolutely'
-    const para5 = 'and'
-    const para6 = 'especially literary film. Moreover,'
-    const para7 = 'and video games are my nicotine. Just keep taking'
-    paragraph.push(para1.split(' '))
-    paragraph.push(para2.split(' '))
-    paragraph.push(para3.split(' '))
-    paragraph.push(para4.split(' '))
-    paragraph.push(para5.split(' '))
-    paragraph.push(para6.split(' '))
-    paragraph.push(para7.split(' '))
-    
-  }
-  onMounted(() => generatePara())
+const contactList: Contact[] = reactive([
+  {
+    icon: 'mdi-github',
+    text: '@donaldxdonald',
+    link: 'https://github.com/donaldxdonald',
+  },
+  {
+    icon: 'mdi-email-outline',
+    text: 'mzhlovefama@hotmail.com',
+    link: 'mailto:mzhlovefama@hotmail.com',
+  },
+])
+
+const keywords: Record<number, Keyword> = reactive({
+  3: {
+    text: 'Donald',
+  },
+  4: {
+    text: 'Mok',
+  },
+  20: {
+    text: 'made',
+  },
+  22: {
+    text: 'programming',
+    link: 'http://article.donaldxdonald.xyz',
+  },
+  36: {
+    text: 'photography',
+    link: '#',
+  },
+  38: {
+    text: 'film',
+    link: '#',
+  },
+  43: {
+    text: 'music',
+    link: '#',
+  },
+  53: {
+    text: 'notes',
+  },
+})
 </script>
 
 <template>
-  <div class="intro-container flex flex-col justify-center items-center" :style="{ color: textColor }">
-    <div class="main-title w-100 text-2xl mb-20">DonaldxDonald</div>
-    <div class="context-wrap bg-pink-100 w-90 lg:w-50 md:w-70 sm:w-80">
+  <div class="mt-1/25 flex flex-col justify-center items-center" :style="{ color: textColor }">
+    <div class="font-title w-100 text-3xl leading-normal mb-10">
+      DonaldxDonald
+    </div>
+    <div class="context-wrap">
       <div align="left">
-        <span class="opening">Hello guys!</span>
+        <span class="font-highlight font-bold">Hello guys!</span>
       </div>
-      <div>
-        <span v-for="(text, index) in paragraph[0]" :key="index + text" class="content-block">{{
-          index === paragraph[0].length - 1 ? text : `${text} `
-        }}</span>
-        <span> Donald Mok. </span>
-        <span v-for="(text, index) in paragraph[1]" :key="text + index" class="content-block">{{
-          index === paragraph[1].length - 1 ? text : `${text} `
-        }}</span>
-        <span> made. </span>
-        <span v-for="(text, index) in paragraph[2]" :key="index + text" class="content-block">{{
-          index === paragraph[2].length - 1 ? text : `${text} `
-        }}</span>
-        <a
-          class="intro-kw"
-          :style="{ color: textColor }"
-          :href="hobbies.programming.link"
-        >
-          {{ hobbies.programming.text }}
-        </a>
-        <span v-for="(text, index) in paragraph[3]" :key="index + text" class="content-block">{{
-          index === paragraph[3].length - 1 ? text : `${text} `
-        }}</span>
-        <a class="intro-kw" :style="{ color: textColor }" :href="hobbies.photo.link">
-          {{ hobbies.photo.text }}
-        </a>
-        <span v-for="(text, index) in paragraph[4]" :key="index + text" class="content-block">{{
-          index === paragraph[4].length - 1 ? text : `${text} `
-        }}</span>
-        <a class="intro-kw" :style="{ color: textColor }" :href="hobbies.film.link">
-          {{ hobbies.film.text }}
-        </a>
-        <span v-for="(text, index) in paragraph[5]" :key="index + text" class="content-block">{{
-          index === paragraph[5].length - 1 ? text : `${text} `
-        }}</span>
-        <a class="intro-kw" :style="{ color: textColor }" :href="hobbies.music.link">
-          {{ hobbies.music.text }}
-        </a>
-        <span v-for="(text, index) in paragraph[6]" :key="index + text" class="content-block">{{
-          index === paragraph[6].length - 1 ? text : `${text} `
-        }}</span>
-        <span> notes. </span>
-      </div>
-      <!-- <div class="contact-list">
+      <span>
+        <span v-for="(content, index) in paragraph" :key="index">
+          <span v-if="keywords[index]" class="intro-kw">
+            <a v-if="keywords[index].link" :href="keywords[index].link">{{ ` ${content} ` }}</a>
+            <span v-else>{{ ` ${content} ` }}</span>
+          </span>
+          <span v-else class="content-block">{{ keywords[index + 1] ? content : `${content} ` }}</span>
+        </span>
+      </span>
+      <div class="mt-10 text-md">
         <div
           v-for="(item, index) in contactList"
           :key="index + item.text"
-          class="list-item dp-flex ai-center"
+          class="flex items-center"
         >
-          <v-icon :color="textColor">{{ item.icon }}</v-icon>
-          <a class="ml-2 fz-xxl primary--text" :href="item.link">{{ item.text }}</a>
+          <mdi-github v-if="index === 0" :color="textColor" />
+          <mdi-email-outline v-else :color="textColor" />
+          <a class="ml-2 text-xxl text-blue-400" :href="item.link">{{ item.text }}</a>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
 
 <style>
-.intro-container {
-  margin-top: 8vh;
-}
-.main-title {
-  font-family: 'Agency FB','Microsoft YaHei','sans-serif';
-}
-.opening {
-  font-family: 'Futura LT Medium', 'serif';
-}
 
 .context-wrap {
-  text-align: justify;
-  font-size: 1.5625rem;
-  line-height: 1.5625rem * 2;
+  @apply  text-md text-justify leading-loose w-4/5 xl:w-1/4 lg:w-2/5 md:w-2/5 sm:w-3/5;
   word-spacing: .5rem;
 }
-    .context-wrap:hover, .context-wrap:focus > .block {
-        background-color: #000;
-        color: #000;
-    }
+.context-wrap:hover  .content-block {
+  background-color: #000;
+  color: #000;
+}
 </style>

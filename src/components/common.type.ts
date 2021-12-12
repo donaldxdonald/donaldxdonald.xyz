@@ -6,5 +6,5 @@ export interface Contact {
 
 export interface Keyword {
   text: string
-  link: string
+  link?: string
 }

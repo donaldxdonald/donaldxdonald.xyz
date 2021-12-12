@@ -1,12 +1,6 @@
 @import './markdown.css';
-
-html,
-body,
-#app {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+@import './fonts.css';
+@import './reset.css';
 
 html.dark {
   background: #121212;
