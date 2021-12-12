@@ -20,13 +20,6 @@ jobs:
         uses: pnpm/action-setup@v2.0.1
         with: 
           version: 6.20.4
-
-      - name: Setup Node.js ${{ secrets.NODE_VERSION }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ secrets.NODE_VERSION }}
-          registry-url: https://registry.npmjs.org/
-          cache: "pnpm"
           
       - name: Install dependencies
         run: pnpm install
