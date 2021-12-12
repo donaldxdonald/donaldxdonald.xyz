@@ -3,12 +3,18 @@
   "parserOptions": {
     "parser": "@typescript-eslint/parser"
   },
+  "env": {
+    "vue/setup-compiler-macros": true
+  },
   "extends": [
     "@dndxdnd",
     "plugin:vue/vue3-recommended"
   ],
   "rules": {
     "arrow-parens": ["error", "as-needed"],
+    "curly": ["error", "all"],
+    "no-tabs": "off",
+    "no-console":"off",
     // Vue
     "vue/mustache-interpolation-spacing": ["error", "always"],
     "vue/max-attributes-per-line": ["error", {
@@ -18,6 +24,10 @@
       "multiline": {
         "max": 2
       }
-    }]
+    }],
+    "vue/no-undef-properties": ["error", {
+      "ignores": ["/^\\$/"]
+    }],
+    "vue/multi-word-component-names": "off"
   }
 }

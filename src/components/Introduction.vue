@@ -1,23 +1,30 @@
 <script setup lang="ts">
-import { reactive, ref, defineProps, computed } from 'vue'
+import { reactive, computed } from 'vue'
 import { Contact, Keyword } from './common.type'
 import { INTRO } from '~/utils/constant'
 import { contrastTextColor } from '~/utils/utils'
+
 const paragraph: string[] = reactive(INTRO.MAIN_CONTENT.split(' '))
 
 const props = defineProps({
   bgColor: {
     type: String,
-    default: '#fff',
+    default: '#eee',
   },
 })
 
-const bgc = ref('#fff')
+const emit = defineEmits<{
+  (e: 'hovering', value: string): void
+  (e: 'leaving'): void
+}>()
+
+const onHoverKw = (content: string): void => {
+  emit('hovering', content)
+}
 
 const textColor = computed(() => {
   let color = '#333'
-  if (bgc.value !== '')
-    color = contrastTextColor(bgc.value)
+  if (props.bgColor !== '') { color = contrastTextColor(props.bgColor) }
 
   return color
 })
@@ -50,7 +57,7 @@ const keywords: Record<number, Keyword> = reactive({
     link: 'http://article.donaldxdonald.xyz',
   },
   36: {
-    text: 'photography',
+    text: 'photo',
     link: '#',
   },
   38: {
@@ -69,7 +76,7 @@ const keywords: Record<number, Keyword> = reactive({
 
 <template>
   <div class="mt-1/25 flex flex-col justify-center items-center" :style="{ color: textColor }">
-    <div class="font-title w-100 text-3xl leading-normal mb-10">
+    <div class="font-title w-100 text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
     <div class="context-wrap">
@@ -78,8 +85,14 @@ const keywords: Record<number, Keyword> = reactive({
       </div>
       <span>
         <span v-for="(content, index) in paragraph" :key="index">
-          <span v-if="keywords[index]" class="intro-kw">
-            <a v-if="keywords[index].link" :href="keywords[index].link">{{ ` ${content} ` }}</a>
+          <span
+            v-if="keywords[index]" class="intro-kw"
+          >
+            <a
+              v-if="keywords[index].link" :href="keywords[index].link"
+              @mouseover="onHoverKw(keywords[index].text)"
+              @mouseleave="emit('leaving')"
+            >{{ ` ${content} ` }}</a>
             <span v-else>{{ ` ${content} ` }}</span>
           </span>
           <span v-else class="content-block">{{ keywords[index + 1] ? content : `${content} ` }}</span>
@@ -103,7 +116,7 @@ const keywords: Record<number, Keyword> = reactive({
 <style>
 
 .context-wrap {
-  @apply  text-md text-justify leading-loose w-4/5 xl:w-1/4 lg:w-2/5 md:w-2/5 sm:w-3/5;
+  @apply  text-lg text-justify leading-loose w-4/5 xl:w-1/4 lg:w-2/5 md:w-2/5 sm:w-3/5;
   word-spacing: .5rem;
 }
 .context-wrap:hover  .content-block {

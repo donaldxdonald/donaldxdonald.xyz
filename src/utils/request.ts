@@ -1,21 +1,30 @@
-import axios from 'axios'
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+export interface ResponseBody<T> {
+  data: T
+  message: string
+  status: number
+}
+export class Request {
+  instance: AxiosInstance
 
-const instance = axios.create({
+  constructor(config: AxiosRequestConfig) {
+    this.instance = axios.create(config)
+    this.instance.interceptors.request.use((config: AxiosRequestConfig) => {
+      return config
+    })
+    this.instance.interceptors.response.use((response: AxiosResponse<ResponseBody>) => {
+      return response.data.data
+    }, err => {
+      console.error(err)
+    })
+  }
+
+  request<T>(config: AxiosRequestConfig): Promise<T> {
+    return this.instance.request(config)
+  }
+}
+
+export const request = new Request({
   baseURL: '',
   timeout: 15000,
 })
-
-instance.interceptors.request.use(config => {
-  return config
-}, err => {
-  return Promise.reject(err)
-})
-
-instance.interceptors.response.use(response => {
-  const res = response.data
-  return res
-}, err => {
-  return Promise.reject(err)
-})
-
-export default instance
