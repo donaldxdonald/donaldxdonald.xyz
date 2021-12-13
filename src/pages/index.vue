@@ -1,18 +1,12 @@
 <script setup lang="ts">
 import { ref, Ref, onMounted, reactive, computed } from 'vue'
 import { queryBgImg } from '~/api/image'
-import { ImageDetail } from '~/api/image.type'
+import { ImageData } from '~/api/image.type'
 const showBg: Ref<undefined|string> = ref(undefined)
-const bgImgConfig: ImageDetail[] = reactive([])
+const bgImgConfig: ImageData[] = reactive([])
 const fetchBgConfig = async() => {
   const result = await queryBgImg()
-  Object.keys(result).forEach(imageKey => {
-    const imageData: ImageDetail = {
-      ...result[imageKey],
-      type: imageKey,
-    }
-    bgImgConfig.push(imageData)
-  })
+  result.forEach(item => bgImgConfig.push(item))
 }
 onMounted(() => {
   fetchBgConfig()
