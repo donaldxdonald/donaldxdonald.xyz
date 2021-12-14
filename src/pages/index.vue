@@ -2,6 +2,8 @@
 import { ref, Ref, onMounted, reactive, computed } from 'vue'
 import { queryBgImg } from '~/api/image'
 import { ImageData } from '~/api/image.type'
+import MatrixRain from '~/components/MatrixRain.vue'
+import { toggleDark } from '~/composables'
 const showBg: Ref<undefined|string> = ref(undefined)
 const bgImgConfig: ImageData[] = reactive([])
 const fetchBgConfig = async() => {
@@ -15,13 +17,16 @@ const hoveringContent = computed(() => {
   return bgImgConfig.find(item => item.type === showBg.value)
 })
 const onHovering = (hoveringObj: string) => {
-  if (bgImgConfig.length === 0) {
-    return
+  if (hoveringObj === 'programming') {
+    toggleDark()
   }
   showBg.value = hoveringObj
 }
 
 const onLeaving = () => {
+  if (showBg.value === 'programming') {
+    toggleDark()
+  }
   showBg.value = undefined
 }
 
@@ -29,6 +34,9 @@ const onLeaving = () => {
 
 <template>
   <div class="relative w-full h-full overflow-hidden">
+    <div class="absolute inset-0 opacity-0" :class="showBg === 'programming' && 'fade-in'">
+      <MatrixRain />
+    </div>
     <div
       v-for="(item, index) in bgImgConfig"
       :key="index"

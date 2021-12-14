@@ -106,7 +106,7 @@ const keywords: Record<number, Keyword> = reactive({
         >
           <mdi-github v-if="index === 0" :color="textColor" />
           <mdi-email-outline v-else :color="textColor" />
-          <a class="ml-2 text-xxl text-blue-400" :href="item.link">{{ item.text }}</a>
+          <a class="ml-2 text-xxl dark:text-dark-400 text-blue-400" :href="item.link">{{ item.text }}</a>
         </div>
       </div>
     </div>

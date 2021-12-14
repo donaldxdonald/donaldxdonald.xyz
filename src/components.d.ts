@@ -9,6 +9,7 @@ declare module 'vue' {
     Header: typeof import('./components/Header.vue')['default']
     Icon: typeof import('~icons/ic/on')['default']
     Introduction: typeof import('./components/Introduction.vue')['default']
+    MatrixRain: typeof import('./components/MatrixRain.vue')['default']
     MdiCheck: typeof import('~icons/mdi/check')['default']
     MdiEmailOutline: typeof import('~icons/mdi/email-outline')['default']
     MdiGithub: typeof import('~icons/mdi/github')['default']
