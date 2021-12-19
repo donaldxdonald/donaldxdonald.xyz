@@ -4,15 +4,12 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    CarbonWarning: typeof import('~icons/carbon/warning')['default']
-    Footer: typeof import('./components/Footer.vue')['default']
-    Header: typeof import('./components/Header.vue')['default']
-    Icon: typeof import('~icons/ic/on')['default']
     Introduction: typeof import('./components/Introduction.vue')['default']
     MatrixRain: typeof import('./components/MatrixRain.vue')['default']
-    MdiCheck: typeof import('~icons/mdi/check')['default']
     MdiEmailOutline: typeof import('~icons/mdi/email-outline')['default']
     MdiGithub: typeof import('~icons/mdi/github')['default']
+    Post: typeof import('./components/Post.vue')['default']
+    PostList: typeof import('./components/PostList.vue')['default']
     README: typeof import('./components/README.md')['default']
   }
 }

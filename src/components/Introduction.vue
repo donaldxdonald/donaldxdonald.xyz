@@ -54,7 +54,7 @@ const keywords: Record<number, Keyword> = reactive({
   },
   22: {
     text: 'programming',
-    link: 'http://article.donaldxdonald.xyz',
+    link: '/post',
   },
   36: {
     text: 'photo',
@@ -76,7 +76,7 @@ const keywords: Record<number, Keyword> = reactive({
 
 <template>
   <div class="mt-1/25 flex flex-col justify-center items-center" :style="{ color: textColor }">
-    <div class="font-title w-100 text-4xl leading-normal mb-10">
+    <div class="font-title text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
     <div class="context-wrap">
