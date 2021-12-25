@@ -3,7 +3,6 @@ import fs from 'fs'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
-import Layouts from 'vite-plugin-vue-layouts'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
@@ -17,6 +16,8 @@ import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 import TOC from 'markdown-it-table-of-contents'
 import matter from 'gray-matter'
+import { RouteRecordNormalized } from 'vue-router'
+import { Frontmatter } from 'src/types'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -43,12 +44,13 @@ export default defineConfig({
           dir: 'src/posts', baseRoute: 'post',
         },
       ],
-      extendRoute(route) {
+      extendRoute(route: RouteRecordNormalized) {
         const path = resolve(__dirname, route.component.slice(1))
 
         const md = fs.readFileSync(path, 'utf-8')
         const { data } = matter(md)
-        route.meta = Object.assign(route.meta || {}, { frontmatter: data })
+        route.meta = Object.assign(route.meta || {})
+        route.meta.frontmatter = data as Frontmatter
 
         return route
       },

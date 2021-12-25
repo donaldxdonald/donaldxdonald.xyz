@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, computed } from 'vue'
-import { Contact, Keyword } from './common.type'
+import { Contact, Keyword } from '~/types'
 import { INTRO } from '~/utils/constant'
 import { contrastTextColor } from '~/utils/utils'
 
@@ -70,6 +70,7 @@ const keywords: Record<number, Keyword> = reactive({
   },
   53: {
     text: 'notes',
+    link: '/post',
   },
 })
 </script>
@@ -79,7 +80,7 @@ const keywords: Record<number, Keyword> = reactive({
     <div class="font-title text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
-    <div class="context-wrap">
+    <div class="context-wrap main-layout">
       <div align="left">
         <span class="font-highlight font-bold">Hello guys!</span>
       </div>
@@ -116,7 +117,7 @@ const keywords: Record<number, Keyword> = reactive({
 <style>
 
 .context-wrap {
-  @apply  text-lg text-justify leading-loose w-4/5 xl:w-1/4 lg:w-2/5 md:w-2/5 sm:w-3/5;
+  @apply  text-lg text-justify leading-loose;
   word-spacing: .5rem;
 }
 .context-wrap:hover  .content-block {

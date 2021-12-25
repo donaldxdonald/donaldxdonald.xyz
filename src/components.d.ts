@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BlogPost: typeof import('./components/BlogPost.vue')['default']
     Introduction: typeof import('./components/Introduction.vue')['default']
     MatrixRain: typeof import('./components/MatrixRain.vue')['default']
     MdiEmailOutline: typeof import('~icons/mdi/email-outline')['default']

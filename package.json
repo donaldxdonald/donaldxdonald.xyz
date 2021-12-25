@@ -12,6 +12,7 @@
     "@vueuse/core": "^7.1.2",
     "@vueuse/head": "^0.7.2",
     "axios": "^0.24.0",
+    "dayjs": "^1.10.7",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.4",
     "prism-theme-vars": "^0.2.2",
