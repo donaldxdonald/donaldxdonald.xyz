@@ -2,7 +2,9 @@
 @import 'prism-theme-vars/base.css';
 
 .prose {
-  --prism-font-family: 'Input Mono', monospace;
+  --prism-font-family: 'JetBrains Mono', 'Input Mono', monospace;
+  --prism-block-font-size: 0.8rem;
+  @apply prose-layout leading-loose;
 }
 
 .prose img {
@@ -10,8 +12,8 @@
 }
 
 html:not(.dark) .prose {
-  --prism-foreground: #393a34;
-  --prism-background: #fbfbfb;
+  --prism-foreground: #e5e5e5;
+  --prism-background: #363636;
   --prism-comment: #a0ada0;
   --prism-string: #b56959;
   --prism-literal: #2f8a89;
@@ -55,4 +57,43 @@ html.dark .prose {
   --prism-line-number-gutter: #eeeeee;
   --prism-line-highlight-background: #444444;
   --prism-selection-background: #444444;
+}
+
+.prose h1 {
+  @apply text-2xl font-weight-400;
+}
+.prose h2 {
+  @apply text-xl font-weight-400 my-2;
+}
+.prose h3 {
+  @apply text-lg font-weight-400;
+}
+
+.prose p {
+  @apply font-weight-300;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+
+}
+
+.prose a {
+  @apply relative text-indigo-400;
+}
+
+.prose a:after {
+  content: attr(href);
+  @apply absolute top-0 left-1/2 bg-blue-gray-400 text-blue-gray-50 text-sm px-3 py-1 rounded invisible;
+  transform: translate(-50%, -100%);
+}
+
+.prose a:hover:after {
+  @apply visible;
+}
+
+.prose ol, .prose ul {
+  padding-inline-start: 2rem;
+}
+
+.prose code {
+  @apply bg-blue-gray-100 rounded p-1;
 }

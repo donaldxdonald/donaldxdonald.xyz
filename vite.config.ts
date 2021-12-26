@@ -19,8 +19,6 @@ import matter from 'gray-matter'
 import { RouteRecordNormalized } from 'vue-router'
 import { Frontmatter } from 'src/types'
 
-const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
-
 export default defineConfig({
   resolve: {
     alias: {
@@ -97,14 +95,11 @@ export default defineConfig({
     }),
 
     // https://github.com/antfu/vite-plugin-windicss
-    WindiCSS({
-      safelist: markdownWrapperClasses,
-    }),
+    WindiCSS(),
 
     // https://github.com/antfu/vite-plugin-md
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
-      wrapperClasses: markdownWrapperClasses,
       wrapperComponent: 'post',
       headEnabled: true,
       markdownItSetup(md) {

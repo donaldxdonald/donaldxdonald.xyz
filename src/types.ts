@@ -22,6 +22,7 @@ export interface PostTitleItem {
 export interface Frontmatter {
   title: string
   date?: string
+  display?: string
 }
 
 declare module 'vue-router' {

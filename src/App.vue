@@ -12,5 +12,7 @@ useHead({
 </script>
 
 <template>
-  <router-view />
+  <keep-alive>
+    <router-view />
+  </keep-alive>
 </template>

@@ -1,25 +1,24 @@
 <script setup lang="ts">
-defineProps({
-  frontmatter: {
-    type: Object,
-    required: true,
-  },
-})
+import { Frontmatter } from '~/types'
+import { formatDate } from '~/utils/utils'
+defineProps<{
+  frontmatter: Frontmatter
+}>()
 </script>
 
 <template>
-  <div v-if="frontmatter.display ?? frontmatter.title" class="prose m-auto mb-8">
-    <h1 class="mb-0">
+  <div v-if="frontmatter.display ?? frontmatter.title" class="prose mx-auto mt-15 mb-8 main-layout">
+    <h1>
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
-    <p v-if="frontmatter.date" class="opacity-50 !-mt-2">
-      {{ frontmatter.date }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
-    </p>
-    <p v-if="frontmatter.subtitle" class="opacity-50 !-mt-6 italic">
-      {{ frontmatter.subtitle }}
+    <p v-if="frontmatter.date" class="opacity-50 mt-2">
+      {{ formatDate(frontmatter.date, 'YYYY-MM-DD hh:mm') }}
     </p>
   </div>
-  <article ref="content">
+  <article
+    ref="content" class="prose m-auto pb-1/10"
+    :class="frontmatter.display ? 'prose-layout': 'main-layout'"
+  >
     <slot />
   </article>
 </template>

@@ -24,7 +24,7 @@ const posts = computed(() => routes.filter(route => {
 </script>
 
 <template>
-  <div class="mt-12 flex flex-col items-start w-3/10">
+  <div class="mt-5 flex flex-col items-start">
     <router-link
       v-for="post in posts" :key="post.path"
       class="w-1/1 mb-8 flex flex-col items-start"
@@ -33,7 +33,7 @@ const posts = computed(() => routes.filter(route => {
       <span class="w-1/1 text-l text-dark-400 text-ellipsis">
         {{ post.meta.frontmatter?.title || '' }}
       </span>
-      <div class="w-1/1 pt-4 flex items-center justify-between text-sm text-blue-gray-400">
+      <div class="w-1/1 pt-2 flex items-center justify-between text-sm text-blue-gray-400">
         <span>{{ formatDate(post.meta.frontmatter?.date as string, 'YYYY-MM-DD') }}</span>
       </div>
     </router-link>
