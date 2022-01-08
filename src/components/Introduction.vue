@@ -76,7 +76,7 @@ const keywords: Record<number, Keyword> = reactive({
 </script>
 
 <template>
-  <div class="mt-1/25 flex flex-col justify-center items-center" :style="{ color: textColor }">
+  <div class="mt-1/10 flex flex-col justify-center items-center" :style="{ color: textColor }">
     <div class="font-title text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
