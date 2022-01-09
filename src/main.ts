@@ -1,6 +1,6 @@
 // register vue composition api globally
 import { ViteSSG } from 'vite-ssg'
-import generatedRoutes from 'virtual:generated-pages'
+import generatedRoutes from 'pages-generated'
 import App from './App.vue'
 
 // your custom styles here
