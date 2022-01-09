@@ -8,7 +8,6 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-md'
-// import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
@@ -39,7 +38,7 @@ export default defineConfig({
           dir: 'src/pages', baseRoute: '',
         },
         {
-          dir: 'src/posts', baseRoute: 'post',
+          dir: 'src/posts', baseRoute: '/post',
         },
       ],
       extendRoute(route: RouteRecordNormalized) {
@@ -113,8 +112,8 @@ export default defineConfig({
         })
         md.use(anchor, {
           permalink: anchor.permalink.linkInsideHeader({
-            symbol: '#'
-          })
+            symbol: '#',
+          }),
         })
         md.use(TOC, {
           includeLevel: [1, 2, 3],

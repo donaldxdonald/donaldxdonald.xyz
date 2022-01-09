@@ -24,7 +24,7 @@ const onHoverKw = (content: string): void => {
 
 const textColor = computed(() => {
   let color = '#333'
-  if (props.bgColor !== '') color = contrastTextColor(props.bgColor)
+  if (props.bgColor !== '') { color = contrastTextColor(props.bgColor) }
 
   return color
 })
@@ -70,7 +70,7 @@ const keywords: Record<number, Keyword> = reactive({
   },
   53: {
     text: 'notes',
-    link: '/post',
+    link: '/posts',
   },
 })
 </script>
