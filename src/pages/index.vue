@@ -40,13 +40,13 @@ const onLeaving = () => {
     <div
       v-for="(item, index) in bgImgConfig"
       :key="index"
-      class="absolute inset-0 w-full h-full z-99 opacity-0"
+      class="absolute inset-0 w-full h-full opacity-0"
       :class="showBg === item.type && 'fade-in'"
     >
-      <div class="absolute inset-0 h-full w-screen opacity-65" :style="{'background-color': item.avgColor}" />
+      <div class="absolute inset-0 h-full w-screen opacity-60" :style="{'background-color': item.avgColor}" />
       <img class="h-full w-full object-cover" :src="item.url">
     </div>
-    <div class="absolute inset-0 z-99">
+    <div class="absolute inset-0">
       <Introduction
         :bg-color="hoveringContent?.avgColor || '#eee'" @hovering="onHovering"
         @leaving="onLeaving"
