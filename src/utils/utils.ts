@@ -1,4 +1,4 @@
-
+import dayjs from 'dayjs'
 /**
  * @param backgroundColor 字符串 传入  #FFFBBC | FBC | FFBBCC 均可
  */
@@ -29,4 +29,9 @@ export function contrastTextColor(backgroundHexColor: string) {
 
   const textColor = (r * 0.299 + g * 0.587 + b * 0.114) > 186 ? '#333' : '#eee'
   return textColor
+}
+
+export function formatDate(date: string | number | Date, format: string): string {
+  const dateObj = dayjs(date)
+  return dateObj.format(format)
 }

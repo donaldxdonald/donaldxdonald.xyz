@@ -2,6 +2,26 @@
 @import './fonts.css';
 @import './reset.css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 1px;
+  @apply bg-purple-100;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: none;
+  @apply bg-purple-300;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 10px;
+}
+
 html.dark {
   background: #121212;
 }
@@ -34,4 +54,18 @@ html.dark {
     opacity-75 transition duration-200 ease-in-out
     hover:opacity-100 hover:text-teal-600;
   font-size: 0.9em;
+}
+
+.main-layout {
+  @apply w-4/5 xl:w-1/4 lg:w-2/5 md:w-2/5 sm:w-3/5;
+}
+
+.prose-layout {
+  @apply w-4/5 xl:w-1/4 lg:w-2/5 md:w-2/5 sm:w-3/5;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

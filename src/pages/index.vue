@@ -33,7 +33,7 @@ const onLeaving = () => {
 </script>
 
 <template>
-  <div class="relative w-full h-full overflow-hidden">
+  <div class="relative w-screen h-screen text-center overflow-hidden">
     <div class="absolute inset-0 opacity-0" :class="showBg === 'programming' && 'fade-in'">
       <MatrixRain />
     </div>
@@ -68,8 +68,3 @@ const onLeaving = () => {
   }
 }
 </style>
-
-<route lang="yaml">
-meta:
-  layout: home
-</route>

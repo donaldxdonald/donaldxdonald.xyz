@@ -2,7 +2,9 @@
 @import 'prism-theme-vars/base.css';
 
 .prose {
-  --prism-font-family: 'Input Mono', monospace;
+  --prism-font-family: 'JetBrains Mono', 'Input Mono', monospace;
+  --prism-block-font-size: 0.8rem;
+  @apply prose-layout leading-loose;
 }
 
 .prose img {
@@ -10,8 +12,8 @@
 }
 
 html:not(.dark) .prose {
-  --prism-foreground: #393a34;
-  --prism-background: #fbfbfb;
+  --prism-foreground: #e5e5e5;
+  --prism-background: #363636;
   --prism-comment: #a0ada0;
   --prism-string: #b56959;
   --prism-literal: #2f8a89;
@@ -29,6 +31,7 @@ html:not(.dark) .prose {
   --prism-decorator: #bd8f8f;
   --prism-regex: #ab5e3f;
   --prism-json-property: #698c96;
+  --prism-selector: #e5e5e5;
 }
 
 html.dark .prose {
@@ -55,4 +58,82 @@ html.dark .prose {
   --prism-line-number-gutter: #eeeeee;
   --prism-line-highlight-background: #444444;
   --prism-selection-background: #444444;
+  --prism-selector: #d4cfbf;
+}
+
+.prose h1 {
+  @apply text-2xl font-normal;
+}
+.prose h2 {
+  @apply text-xl font-normal mt-14;
+}
+.prose h3 {
+  @apply text-lg font-normal mt-10;
+}
+
+:is(.prose) h1, h2, h3 {
+  @apply relative;
+}
+
+.prose p {
+  @apply font-light;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+
+}
+
+.prose code::before, .prose code::after {
+  display: none
+}
+
+.prose p > a {
+  @apply relative;
+}
+
+.prose p > a:after {
+  content: '';
+  @apply bg-theme/50 absolute left-0 bottom-0 w-full h-2/5 -z-10;
+}
+
+
+.prose ol, .prose ul {
+  padding-inline-start: 2rem;
+}
+
+.prose p code {
+  @apply rounded py-1 px-2 bg-theme/30;
+}
+
+.table-of-contents {
+  @apply opacity-0 hover:opacity-100 fixed left-0 top-1/2 -translate-y-1/2 transition-all;
+}
+
+.table-of-contents ul {
+  @apply list-none
+}
+
+.table-of-contents ul li {
+  @apply relative;
+}
+
+.table-of-contents ul li a {
+  @apply relative hover:after:opacity-100;
+}
+
+.table-of-contents ul li a::after {
+  content: '';
+  @apply opacity-0 absolute left-0 bottom-0 h-2/5 w-full -z-10 bg-theme/70 transition-all;
+}
+
+.table-of-contents ul li::after {
+  content: '';
+  @apply absolute -left-4 top-1/2 -translate-y-1/2 bg-theme/50 w-3 h-px;
+}
+
+.prose .header-anchor {
+  @apply absolute -left-4 top-0 opacity-0;
+}
+
+.prose :is(h1,h2,h3):hover .header-anchor {
+  @apply opacity-50;
 }

@@ -1,26 +1,28 @@
-import path from 'path'
+import { resolve } from 'path'
+import fs from 'fs'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
-import Layouts from 'vite-plugin-vue-layouts'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-md'
-import WindiCSS from 'vite-plugin-windicss'
 // import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
-
-const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
+import TOC from 'markdown-it-table-of-contents'
+import anchor from 'markdown-it-anchor'
+import matter from 'gray-matter'
+import { RouteRecordNormalized } from 'vue-router'
+import { Frontmatter } from 'src/types'
 
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': `${resolve(__dirname, 'src')}/`,
     },
   },
   plugins: [
@@ -31,10 +33,27 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
-    }),
+      nuxtStyle: true,
+      dirs: [
+        {
+          dir: 'src/pages', baseRoute: '',
+        },
+        {
+          dir: 'src/posts', baseRoute: 'post',
+        },
+      ],
+      extendRoute(route: RouteRecordNormalized) {
+        const path = resolve(__dirname, route.component.slice(1))
 
-    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts(),
+        const md = fs.readFileSync(path, 'utf-8')
+        const { data } = matter(md)
+        route.meta = Object.assign(route.meta || {})
+        route.meta.frontmatter = data as Frontmatter
+
+        return route
+      },
+
+    }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
@@ -75,15 +94,10 @@ export default defineConfig({
       autoInstall: true,
     }),
 
-    // https://github.com/antfu/vite-plugin-windicss
-    WindiCSS({
-      safelist: markdownWrapperClasses,
-    }),
-
     // https://github.com/antfu/vite-plugin-md
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
-      wrapperClasses: markdownWrapperClasses,
+      wrapperComponent: 'post',
       headEnabled: true,
       markdownItSetup(md) {
         // https://prismjs.com/
@@ -96,6 +110,14 @@ export default defineConfig({
             target: '_blank',
             rel: 'noopener',
           },
+        })
+        md.use(anchor, {
+          permalink: anchor.permalink.linkInsideHeader({
+            symbol: '#'
+          })
+        })
+        md.use(TOC, {
+          includeLevel: [1, 2, 3],
         })
       },
     }),
@@ -133,7 +155,7 @@ export default defineConfig({
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
-      include: [path.resolve(__dirname, 'locales/**')],
+      include: [resolve(__dirname, 'locales/**')],
     }),
 
     // https://github.com/antfu/vite-plugin-inspect
