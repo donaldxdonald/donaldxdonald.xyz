@@ -8,13 +8,13 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-md'
-import WindiCSS from 'vite-plugin-windicss'
 // import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 import TOC from 'markdown-it-table-of-contents'
+import anchor from 'markdown-it-anchor'
 import matter from 'gray-matter'
 import { RouteRecordNormalized } from 'vue-router'
 import { Frontmatter } from 'src/types'
@@ -94,9 +94,6 @@ export default defineConfig({
       autoInstall: true,
     }),
 
-    // https://github.com/antfu/vite-plugin-windicss
-    WindiCSS(),
-
     // https://github.com/antfu/vite-plugin-md
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
@@ -113,6 +110,11 @@ export default defineConfig({
             target: '_blank',
             rel: 'noopener',
           },
+        })
+        md.use(anchor, {
+          permalink: anchor.permalink.linkInsideHeader({
+            symbol: '#'
+          })
         })
         md.use(TOC, {
           includeLevel: [1, 2, 3],

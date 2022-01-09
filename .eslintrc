@@ -11,10 +11,6 @@
     "plugin:vue/vue3-recommended"
   ],
   "rules": {
-    "arrow-parens": ["error", "as-needed"],
-    "curly": ["error", "all"],
-    "no-tabs": "off",
-    "no-console":"off",
     // Vue
     "vue/mustache-interpolation-spacing": ["error", "always"],
     "vue/max-attributes-per-line": ["error", {

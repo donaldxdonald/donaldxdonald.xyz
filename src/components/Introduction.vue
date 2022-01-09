@@ -24,7 +24,7 @@ const onHoverKw = (content: string): void => {
 
 const textColor = computed(() => {
   let color = '#333'
-  if (props.bgColor !== '') { color = contrastTextColor(props.bgColor) }
+  if (props.bgColor !== '') color = contrastTextColor(props.bgColor)
 
   return color
 })
@@ -76,11 +76,11 @@ const keywords: Record<number, Keyword> = reactive({
 </script>
 
 <template>
-  <div class="mt-1/10 flex flex-col justify-center items-center" :style="{ color: textColor }">
+  <div class="mt-20 flex flex-col justify-center items-center" :style="{ color: textColor }">
     <div class="font-title text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
-    <div class="context-wrap main-layout">
+    <div class="context-wrap main-layout font-menu">
       <div align="left">
         <span class="font-highlight font-bold">Hello guys!</span>
       </div>
@@ -90,7 +90,9 @@ const keywords: Record<number, Keyword> = reactive({
             v-if="keywords[index]" class="intro-kw"
           >
             <a
-              v-if="keywords[index].link" :href="keywords[index].link"
+              v-if="keywords[index].link"
+              class="no-prose"
+              :href="keywords[index].link"
               @mouseover="onHoverKw(keywords[index].text)"
               @mouseleave="emit('leaving')"
             >{{ ` ${content} ` }}</a>
@@ -107,7 +109,7 @@ const keywords: Record<number, Keyword> = reactive({
         >
           <mdi-github v-if="index === 0" :color="textColor" />
           <mdi-email-outline v-else :color="textColor" />
-          <a class="ml-2 text-xxl dark:text-dark-400 text-blue-400" :href="item.link">{{ item.text }}</a>
+          <a class="ml-2 text-xxl dark:text-slate-800 text-theme" :href="item.link">{{ item.text }}</a>
         </div>
       </div>
     </div>
