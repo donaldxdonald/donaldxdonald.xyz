@@ -333,9 +333,6 @@ db.auth("admin","password")
 
 ## MongDB数据库角色
 
----
-
-![image-20200428120311615](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200428120311615.png)
 
 
 
@@ -356,12 +353,5 @@ adb.superheroes.aggregate([
 
 
 
-![image-20200428151827977](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200428151827977.png)
-
-
 
 ## SQL和NOSQL对比
-
----
-
-![image-20200428151856363](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200428151856363.png)
