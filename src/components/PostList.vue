@@ -30,10 +30,10 @@ const posts = computed(() => routes.filter(route => {
       class="w-1/1 mb-12 flex flex-col items-start prose-p"
       :to="post.path"
     >
-      <span class="w-1/1 pb-3 text-dark-400 text-ellipsis">
+      <span class="w-1/1 pb-3 text-ellipsis text-slate-600">
         {{ post.meta.frontmatter?.title || '' }}
       </span>
-      <div class="w-1/1 pt-3 flex border-t items-center justify-between text-sm text-blue-gray-400">
+      <div class="w-1/1 pt-3 flex border-t items-center justify-between text-sm text-slate-400">
         <span>{{ formatDate(post.meta.frontmatter?.date as string, 'YYYY-MM-DD') }}</span>
       </div>
     </router-link>

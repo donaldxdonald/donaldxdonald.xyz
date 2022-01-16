@@ -9,7 +9,7 @@ import './styles/main.css'
 // https://github.com/antfu/vite-ssg
 export const createApp = ViteSSG(
   App,
-  { routes: generatedRoutes },
+  { routes: generatedRoutes, scrollBehavior: () => { return { top: 0 } } },
   ctx => {
     // install all modules under `modules/`
     Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
