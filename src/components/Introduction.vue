@@ -77,7 +77,7 @@ const keywords: Record<number, Keyword> = reactive({
 
 <template>
   <div class="mt-20 flex flex-col justify-center items-center" :style="{ color: textColor }">
-    <div class="font-title text-4xl leading-normal mb-10">
+    <div class="font-title hover:font-italic cursor-default text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
     <div class="context-wrap main-layout font-menu">
@@ -91,7 +91,6 @@ const keywords: Record<number, Keyword> = reactive({
           >
             <a
               v-if="keywords[index].link"
-              class="no-prose"
               :href="keywords[index].link"
               @mouseover="onHoverKw(keywords[index].text)"
               @mouseleave="emit('leaving')"

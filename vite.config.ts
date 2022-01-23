@@ -101,7 +101,9 @@ export default defineConfig({
       markdownItSetup(md) {
         // https://prismjs.com/
         // @ts-expect-error types mismatch
-        md.use(Prism)
+        md.use(Prism, {
+          plugins: ['show-language'],
+        })
         // @ts-expect-error types mismatch
         md.use(LinkAttributes, {
           pattern: /^https?:\/\//,

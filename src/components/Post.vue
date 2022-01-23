@@ -18,8 +18,8 @@ defineProps<{
     <h1>
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
-    <p v-if="frontmatter.date" class="text-gray-400 border-b pb-5">
-      {{ formatDate(frontmatter.date, 'YYYY-MM-DD hh:mm') }}
+    <p v-if="frontmatter.date" class="text-gray-400 border-b pb-5 text-sm">
+      {{ formatDate(frontmatter.date, 'YYYY-MM-DD HH:mm') }}
     </p>
   </div>
   <article

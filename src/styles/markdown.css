@@ -12,26 +12,26 @@
 }
 
 html:not(.dark) .prose {
-  --prism-foreground: #e5e5e5;
-  --prism-background: #363636;
-  --prism-comment: #a0ada0;
-  --prism-string: #b56959;
+  --prism-foreground: #839496;
+  --prism-background: #002b36;
+  --prism-comment: #586e75;
+  --prism-string: #859900;
   --prism-literal: #2f8a89;
-  --prism-number: #296aa3;
+  --prism-number: #859900;
   --prism-keyword: #1c6b48;
-  --prism-function: #6c7834;
-  --prism-boolean: #1c6b48;
-  --prism-constant: #a65e2b;
+  --prism-function: #268bd2;
+  --prism-boolean: #b58900;
+  --prism-constant: #b58900;
   --prism-deleted: #a14f55;
-  --prism-class: #2993a3;
+  --prism-class: #FFFFB6;
   --prism-builtin: #ab5959;
   --prism-property: #b58451;
   --prism-namespace: #b05a78;
-  --prism-punctuation: #8e8f8b;
-  --prism-decorator: #bd8f8f;
+  --prism-punctuation: #93a1a1;
+  --prism-decorator: #EDEDED;
   --prism-regex: #ab5e3f;
   --prism-json-property: #698c96;
-  --prism-selector: #e5e5e5;
+  --prism-selector: #859900;
 }
 
 html.dark .prose {
@@ -87,12 +87,12 @@ html.dark .prose {
 }
 
 .prose p > a {
-  @apply relative;
+  @apply relative hover:after:h-full hover:after:rounded-sm;
 }
 
 .prose p > a:after {
   content: '';
-  @apply bg-theme/50 absolute left-0 bottom-0 w-full h-1/3 -z-10;
+  @apply bg-theme/50 absolute left-0 bottom-0 w-full h-1/3 -z-10 transition-all;
 }
 
 .prose ol li > a {

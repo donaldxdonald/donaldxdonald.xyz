@@ -17,16 +17,10 @@ const hoveringContent = computed(() => {
   return bgImgConfig.find(item => item.type === showBg.value)
 })
 const onHovering = (hoveringObj: string) => {
-  if (hoveringObj === 'programming') {
-    toggleDark()
-  }
   showBg.value = hoveringObj
 }
 
 const onLeaving = () => {
-  if (showBg.value === 'programming') {
-    toggleDark()
-  }
   showBg.value = undefined
 }
 
