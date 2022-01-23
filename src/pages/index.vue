@@ -3,7 +3,6 @@ import { ref, Ref, onMounted, reactive, computed } from 'vue'
 import { queryBgImg } from '~/api/image'
 import { ImageData } from '~/api/image.type'
 import MatrixRain from '~/components/MatrixRain.vue'
-import { toggleDark } from '~/composables'
 const showBg: Ref<undefined|string> = ref(undefined)
 const bgImgConfig: ImageData[] = reactive([])
 const fetchBgConfig = async() => {
