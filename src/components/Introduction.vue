@@ -54,7 +54,7 @@ const keywords: Record<number, Keyword> = reactive({
   },
   22: {
     text: 'programming',
-    link: '/post',
+    link: '#',
   },
   36: {
     text: 'photo',

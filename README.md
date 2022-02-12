@@ -1,7 +1,7 @@
 <p align="center">
   <samp>
-    <a href="http://donaldxdonald.xyz">Me.&nbsp</a>
-    <a href="http://article.donaldxdonald.xyz">Blog.&nbsp</a>
+    <a href="https://donaldxdonald.xyz">Me.&nbsp</a>
+    <a href="https://donaldxdonald.xyz/posts/">Blog.&nbsp</a>
   </samp>
 </p>
 
