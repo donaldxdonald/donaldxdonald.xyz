@@ -5,7 +5,7 @@ date: 2022-02-12 11:52
 
 ## 背景
 
-最近在做前端编辑器相关的开发，有用到 Slate ，不得不说其框架设计真的很优雅，开发者体验很棒。Slate 的数据模型是 Block Style 结构，在同类产品中较为通用，比如飞书、Notion 和 Google Docs。
+最近在做前端编辑器相关的开发，有用到 [Slate](https://github.com/ianstormtaylor/slate) ，不得不说其框架设计真的很优雅，开发者体验很棒。Slate 的数据模型是 Block Style 结构，在同类产品中较为通用，比如飞书、Notion 和 Google Docs。
 
 ## 需求
 
@@ -15,7 +15,7 @@ date: 2022-02-12 11:52
 
 此处以飞书的数据模型为转换前的例子，数据参考于[飞书开发文档](https://open.feishu.cn/document/ukTMukTMukTM/ukDM2YjL5AjN24SOwYjN#5293aed9)，当前 Slate 版本为 0.72.8 。
 
-根据 Slate 官网描述，每一个 Element 节点最基本的条件就是有 `children` 字段，最底层是 Text 节点。这里我们可以给它加入一个 `type` 字段，以区分 Element 节点类型。那么以下就以 Paragraph 节点为例，飞书的 Paragraph 节点类型以及 TS 的类型定义如下：
+根据 Slate [官网描述](https://docs.slatejs.org/concepts/02-nodes#element)，每一个 Element 节点最基本的条件就是有 `children` 字段，最底层是 Text 节点。这里我们可以给它加入一个 `type` 字段，以区分 Element 节点类型。那么以下就以 Paragraph 节点为例，飞书的 Paragraph 节点类型以及 TS 的类型定义如下：
 
 ```json
 {
