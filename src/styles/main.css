@@ -6,7 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+html {
   scrollbar-gutter: stable both-edges;
 }
 
@@ -24,10 +24,6 @@
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
   border-radius: 10px;
-}
-
-html.dark {
-  background: #121212;
 }
 
 #nprogress {

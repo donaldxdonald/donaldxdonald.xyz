@@ -12,31 +12,8 @@
 }
 
 html:not(.dark) .prose {
-  --prism-foreground: #839496;
-  --prism-background: #002b36;
-  --prism-comment: #586e75;
-  --prism-string: #859900;
-  --prism-literal: #2f8a89;
-  --prism-number: #859900;
-  --prism-keyword: #1c6b48;
-  --prism-function: #268bd2;
-  --prism-boolean: #b58900;
-  --prism-constant: #b58900;
-  --prism-deleted: #a14f55;
-  --prism-class: #FFFFB6;
-  --prism-builtin: #ab5959;
-  --prism-property: #b58451;
-  --prism-namespace: #b05a78;
-  --prism-punctuation: #93a1a1;
-  --prism-decorator: #EDEDED;
-  --prism-regex: #ab5e3f;
-  --prism-json-property: #698c96;
-  --prism-selector: #859900;
-}
-
-html.dark .prose {
   --prism-foreground: #d4cfbf;
-  --prism-background: #151515;
+  --prism-background: #111111;
   --prism-comment: #758575;
   --prism-string: #d48372;
   --prism-literal: #429988;
@@ -47,6 +24,7 @@ html.dark .prose {
   --prism-function: #a1b567;
   --prism-deleted: #a14f55;
   --prism-class: #54b1bf;
+  --prism-constant: #54b1bf;
   --prism-builtin: #e0a569;
   --prism-property: #dd8e6e;
   --prism-namespace: #db889a;
@@ -58,7 +36,28 @@ html.dark .prose {
   --prism-line-number-gutter: #eeeeee;
   --prism-line-highlight-background: #444444;
   --prism-selection-background: #444444;
-  --prism-selector: #d4cfbf;
+}
+
+html.dark .prose {
+  --prism-foreground: #393a34;
+  --prism-background: #fbfbfb;
+  --prism-comment: #a0ada0;
+  --prism-string: #b56959;
+  --prism-literal: #2f8a89;
+  --prism-number: #296aa3;
+  --prism-keyword: #1c6b48;
+  --prism-function: #6c7834;
+  --prism-boolean: #1c6b48;
+  --prism-constant: #a65e2b;
+  --prism-deleted: #a14f55;
+  --prism-class: #2993a3;
+  --prism-builtin: #ab5959;
+  --prism-property: #b58451;
+  --prism-namespace: #b05a78;
+  --prism-punctuation: #8e8f8b;
+  --prism-decorator: #bd8f8f;
+  --prism-regex: #ab5e3f;
+  --prism-json-property: #698c96;
 }
 
 .prose h1 {
@@ -104,7 +103,7 @@ html.dark .prose {
   padding-inline-start: 2rem;
 }
 
-.prose p code {
+.prose :is(p, h1, h2, h3) code {
   @apply rounded py-1 px-2 bg-gray-200;
 }
 
