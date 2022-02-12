@@ -1,5 +1,5 @@
 ---
-title: TypeScript Tips：从已有的对象类型定义新的新的类型
+title: TypeScript Tips：根据已有的对象类型定义新的类型
 date: 2022-02-12 11:52
 ---
 
