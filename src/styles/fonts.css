@@ -8,22 +8,11 @@
 }
 
 @font-face {
-  font-family: 'Futura LT Book';
-  font-style: normal;
-  src: local('Futura LT Book'),
-       url('/src/assets/fonts/Futura/FuturaLTBook.woff2') format('woff2'),
-       url('/src/assets/fonts/Futura/FuturaLTBook.woff') format('woff'),
-       url('/src/assets/fonts/Futura/FuturaLTBook.svg#FuturaLTBook') format('svg'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  font-family: 'Josh';
+  src: local('Josh'),
+       url('/src/assets/fonts/Jost/Jost-VariableFont_wght.ttf') format('truetype')
 }
 
-@font-face {
-  font-family: 'Futura LT Medium';
-  font-style: normal;
-  src: local('Futura LT Medium'),
-       url('/src/assets/fonts/Futura/FuturaLTMedium.woff2') format('woff2'),
-       url('/src/assets/fonts/Futura/FuturaLTMedium.woff') format('woff'),
-       url('/src/assets/fonts/Futura/FuturaLTMedium.svg#FuturaLTMedium') format('svg');/* Chrome 26+, Opera 23+, Firefox 39+ */
-}
 
 @font-face {
   font-family: 'Cascadia Code PL';

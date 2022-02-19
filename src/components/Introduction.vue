@@ -80,7 +80,7 @@ const keywords: Record<number, Keyword> = reactive({
     <div class="font-title hover:font-italic cursor-default text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
-    <div class="context-wrap main-layout font-menu">
+    <div class="context-wrap main-layout font-sans">
       <div align="left">
         <span class="font-highlight font-bold">Hello guys!</span>
       </div>

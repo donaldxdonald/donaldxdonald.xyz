@@ -1,9 +1,12 @@
 @import 'dracula-prism/dist/css/dracula-prism.min.css';
 
 .prose {
-  --prism-font-family: 'JetBrains Mono', 'Input Mono', monospace;
   --prism-block-font-size: 0.8rem;
   @apply prose-layout leading-loose;
+}
+
+code[class*=language-] {
+  @apply font-code;
 }
 
 .prose img {
