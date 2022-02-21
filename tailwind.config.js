@@ -6,9 +6,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Jost Regular', 'Source Han Sans SC VF', 'Microsoft YaHei UI', 'sans-serif'],
+      sans: ['Jost', 'Source Han Sans SC VF', 'Microsoft YaHei UI', 'sans-serif'],
       serif: ['Consolas', 'serif'],
-      highlight: ['Jost Medium', 'Source Han Sans SC VF', 'Microsoft YaHei UI', 'sans-serif'],
+      highlight: ['Jost', 'Source Han Sans SC VF', 'Microsoft YaHei UI', 'sans-serif'],
       title: ['Agency FB', 'Bahnschrift Light', 'sans-serif'],
       italic: ['Cascadia Code PL Italic', 'sans-serif'],
       code: ['Cascadia Code PL', 'Source Han Sans SC VF', 'Microsoft YaHei UI', 'sans-serif'],
