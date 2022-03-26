@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { reactive, computed } from 'vue'
-import { Contact, Keyword } from '~/types'
-import { INTRO } from '~/utils/constant'
-import { contrastTextColor } from '~/utils/utils'
+import { computed, reactive } from 'vue';
+import { Contact, Keyword } from '~/types';
+import { INTRO } from '~/utils/constant';
+import { contrastTextColor } from '~/utils/utils';
 
 const paragraph: string[] = reactive(INTRO.MAIN_CONTENT.split(' '))
 
@@ -80,7 +80,7 @@ const keywords: Record<number, Keyword> = reactive({
     <div class="font-title hover:font-italic cursor-default text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
-    <div class="context-wrap main-layout font-sans">
+    <div class="context-wrap max-w-sm main-layout font-sans">
       <div align="left">
         <span class="font-highlight font-bold">Hello guys!</span>
       </div>

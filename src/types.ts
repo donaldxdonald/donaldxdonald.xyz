@@ -12,11 +12,17 @@ export interface Keyword {
   link?: string
 }
 
-export type PostType = 'PROGRAMMING' | 'FILM'
+export enum PostType {
+  LATEST = 'Latest',
+  PROGRAMMING = 'Programming',
+  FILM = 'Film'
+}
 
-export interface PostTitleItem {
+export interface PostBlock {
   type: PostType
-  content: string
+  label: string
+  url: string
+  limit: number
 }
 
 export interface Frontmatter {

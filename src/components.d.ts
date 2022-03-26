@@ -6,8 +6,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     Introduction: typeof import('./components/Introduction.vue')['default']
     MatrixRain: typeof import('./components/MatrixRain.vue')['default']
-    MdiEmailOutline: typeof import('~icons/mdi/email-outline')['default']
-    MdiGithub: typeof import('~icons/mdi/github')['default']
     Post: typeof import('./components/Post.vue')['default']
     PostList: typeof import('./components/PostList.vue')['default']
     README: typeof import('./components/README.md')['default']

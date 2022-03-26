@@ -1,22 +1,21 @@
-import { resolve } from 'path'
-import fs from 'fs'
-import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import Markdown from 'vite-plugin-md'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
-import Inspect from 'vite-plugin-inspect'
-import Prism from 'markdown-it-prism'
-import LinkAttributes from 'markdown-it-link-attributes'
-import TOC from 'markdown-it-table-of-contents'
-import anchor from 'markdown-it-anchor'
+import Vue from '@vitejs/plugin-vue'
+import fs from 'fs'
 import matter from 'gray-matter'
-import { RouteRecordNormalized } from 'vue-router'
+import anchor from 'markdown-it-anchor'
+import LinkAttributes from 'markdown-it-link-attributes'
+import Prism from 'markdown-it-prism'
+import TOC from 'markdown-it-table-of-contents'
+import { resolve } from 'path'
 import { Frontmatter } from 'src/types'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vite'
+import Inspect from 'vite-plugin-inspect'
+import Markdown from 'vite-plugin-md'
+import Pages from 'vite-plugin-pages'
+import { RouteRecordNormalized } from 'vue-router'
 
 export default defineConfig({
   resolve: {
@@ -52,18 +51,6 @@ export default defineConfig({
         return route
       },
 
-    }),
-
-    // https://github.com/antfu/unplugin-auto-import
-    AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-        'vue-i18n',
-        '@vueuse/head',
-        '@vueuse/core',
-      ],
-      dts: 'src/auto-imports.d.ts',
     }),
 
     // https://github.com/antfu/unplugin-vue-components

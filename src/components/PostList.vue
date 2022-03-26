@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useRouter, RouterLink } from 'vue-router'
-import { PostType } from '~/types'
-import { formatDate } from '~/utils/utils'
+import { computed } from 'vue';
+import { RouterLink, useRouter } from 'vue-router';
+import { PostType } from '~/types';
+import { formatDate } from '~/utils/utils';
 const props = defineProps<{
   postType: PostType
+  limit: number
 }>()
 const router = useRouter()
 const routes = router.getRoutes()
@@ -16,9 +17,12 @@ const routes = router.getRoutes()
     return +new Date(b.meta.frontmatter?.date as string)
     - +new Date(a.meta.frontmatter?.date as string)
   })
-const posts = computed(() => routes.filter(route => {
-  return !route.path.endsWith('.html')
-  && route.path.startsWith(`/post/${props.postType.toLowerCase()}`)
+const posts = computed(() => routes.filter((route, index) => {
+  const isLatest = props.postType === PostType.LATEST
+  const matchPath = (!route.path.endsWith('.html') && route.path.startsWith(`/post/${props.postType.toLowerCase()}`))
+  const matchIndex = props.limit ? index < props.limit : true
+  return (isLatest || matchPath) && matchIndex
+  
 }))
 
 </script>
@@ -27,13 +31,13 @@ const posts = computed(() => routes.filter(route => {
   <div class="mt-5 flex flex-col items-start not-prose">
     <router-link
       v-for="post in posts" :key="post.path"
-      class="w-1/1 mb-12 flex flex-col items-start prose-p"
+      class="w-full mb-8 flex flex-col items-start prose-p px-4 py-2 hover:outline-dashed hover:outline-theme hover:outline-2 transition-all"
       :to="post.path"
     >
-      <span class="w-1/1 pb-3 text-ellipsis text-slate-600">
+      <span class="w-full pb-3 text-ellipsis whitespace-nowrap overflow-hidden text-slate-600">
         {{ post.meta.frontmatter?.title || '' }}
       </span>
-      <div class="w-1/1 pt-3 flex border-t items-center justify-between text-sm text-slate-400">
+      <div class="pt-3 flex border-t items-center justify-between text-sm text-slate-400">
         <span>{{ formatDate(post.meta.frontmatter?.date as string, 'YYYY-MM-DD') }}</span>
       </div>
     </router-link>

@@ -1,39 +1,50 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { PostTitleItem } from '~/types'
-const blogTypes: PostTitleItem[] = [
+import { PostBlock, PostType } from '~/types';
+const postBlocks: PostBlock[] = [
   {
-    type: 'PROGRAMMING',
-    content: 'Programming',
+    type: PostType.LATEST,
+    label: 'Latest',
+    url: '',
+    limit: 5
   },
   {
-    type: 'FILM',
-    content: 'Film',
+    type: PostType.FILM,
+    label: 'Film',
+    url: '',
+    limit: 0
+  },
+  {
+    type: PostType.PROGRAMMING,
+    label: 'Programming',
+    url: '',
+    limit: 0
   },
 ]
-const currentPostTypeIndex = ref(0)
-const currentPostTitleItem = computed(() => blogTypes[currentPostTypeIndex.value])
 </script>
 
 <template>
-  <div class="w-1/1 h-1/1 relative flex flex-col items-center overflow-y-auto overflow-x-hidden">
+  <div class="w-full h-full relative flex flex-col items-center overflow-y-auto overflow-x-hidden">
     <a class="cursor-pointer mt-10 text-xl text-theme font-italic" href="/">DonaldxDonald</a>
-    <div class="w-80 flex flex-col items-start">
-      <div class="mt-10 h-20">
-        <span
-          v-for="(item, index) in blogTypes" :key="item.type"
-          class="blog-title mx-3 text-3xl text-purple-300 cursor-pointer transition-all font-highlight"
-          :class="currentPostTypeIndex === index && 'active'"
-          @click="currentPostTypeIndex = index"
-        >{{ item.content }}</span>
+    <div class="max-w-lg main-layout flex flex-col items-center justify-center">
+      <div
+        class="posts-block mt-5 w-full"
+        v-for="(block, index) in postBlocks"
+        :key="index"
+      >
+        <div class="block-header px-4 py-2 mb-5 hover:bg-theme/25 transition-all flex justify-between items-center rounded-md text-theme">
+          <span class="block-title text-2xl font-italic">{{ block.label }}</span>
+          <mdi-waves></mdi-waves>
+        </div>
+        <div class="block-body my-5">
+          <PostList :post-type="block.type" :limit="block.limit" />
+        </div>
       </div>
-      <PostList :post-type="currentPostTitleItem.type" />
     </div>
   </div>
 </template>
 
 <style scoped>
 .blog-title.active {
-  @apply text-theme font-bold;
+  @apply text-theme font-bold text-3xl;
 }
 </style>
