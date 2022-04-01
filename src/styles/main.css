@@ -36,6 +36,10 @@
   height: 2px;
 }
 
+body {
+  cursor: url('../assets/images/cursor.svg'), auto;
+}
+
 .btn {
   @apply px-4 py-1 rounded inline-block
     bg-teal-600 text-white cursor-pointer
