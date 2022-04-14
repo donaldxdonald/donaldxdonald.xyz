@@ -3,9 +3,7 @@ title: 重看 《 社交网络 》
 date: 2021-12-11 16:00
 ---
 
-[[toc]]
-
-![image-20211211224644772](https://raw.githubusercontent.com/donaldxdonald/DonaldxBlog/master/docs/articles/Film/TheSocialNetwork.assets/image-20211211224644772.png)
+![image-20211211224644772](https://cdn.donaldxdonald.xyz/blog/theSocialNetwork/image-20211211224644772.png)
 
 ## 前言
 
@@ -17,7 +15,7 @@ date: 2021-12-11 16:00
 
 这次重看，真的让我很惊喜。以现在的阅历能以程序员的视角和电影的视角去看这部电影真的很有体验，其中说到有一句话让我很深刻。
 
-![image-20211211163641107](https://raw.githubusercontent.com/donaldxdonald/DonaldxBlog/master/docs/articles/Film/TheSocialNetwork.assets/image-20211211163641107.png)
+![facebook](https://cdn.donaldxdonald.xyz/blog/theSocialNetwork/image-20211211163641107.png)
 
 ​	互联网的魅力就在于能让十万八千里外可能一辈子都没机会见面的人联系在一起。像 Bosnia 这样的国家，没有路，却有 Facebook 。特别是作为前端开发者来看，Web 互联在这方面就更是了，任何设备都有浏览器，写出来的作品可以被世界上不同的人看到，这是很有魅力也很酷的一件事情。不得不说从剧本的角度来看 艾伦索金 真的抓住了精髓，今年还疯狂暗示随时可以创作第二部，就看大卫芬奇的了 XD 。
 
@@ -37,7 +35,7 @@ date: 2021-12-11 16:00
 
 1. 双胞胎兄弟比赛时用了移轴镜头拍摄，非常不错，以前我也尝试了很多次伪移轴摄影，但效果都不太行，缺少一个好的机位，下次再尝试一下。
 
-   ![image-20211211221918863](https://raw.githubusercontent.com/donaldxdonald/DonaldxBlog/master/docs/articles/Film/TheSocialNetwork.assets/image-20211211221918863.png)
+   ![image-20211211221918863](https://cdn.donaldxdonald.xyz/blog/theSocialNetwork/image-20211211221918863.png)
 
 2. Justin Timberlake 比 Jesse Eisenberg 像 Mark 太多了！但是在 *BVS* 中看卷西又会自动跳戏到 *The Social Network* 里哈哈哈。
 

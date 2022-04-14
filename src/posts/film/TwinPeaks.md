@@ -3,7 +3,7 @@ title: 迷人的 Twin Peaks，迷人的 大卫林奇
 date: 2020-08-16 10:40:05
 ---
 
-![image-20211211225014281](https://raw.githubusercontent.com/donaldxdonald/DonaldxBlog/master/docs/articles/Film/TwinPeaks.assets/image-20211211225014281.png)
+![MainTitle](https://cdn.donaldxdonald.xyz/blog/twinPeaks/MainTitle.png)
 
 > "双峰镇，人人都在外遇，人人都是名侦探，人人都想插一脚，人人都以为自己在恋爱，大部分都是变态。"
 
@@ -11,7 +11,7 @@ date: 2020-08-16 10:40:05
 
   
 
-![img](https://bbsimg.maxjia.com//heybox/bbs/imgs/2020/08/16/3b35dd781ae0ef36143e8f822d6deac8)
+![DavidLynch](https://cdn.donaldxdonald.xyz/blog/twinPeaks/DavidLynch.jpg)
 
    刚看的时候会觉得 “风格怎么那么像《锈湖》《心灵杀手》《维吉尼亚》...” “Laura 的人设怎么这么像《奇异人生》的 Rachel ...” “怎么感觉和《怪奇物语》某些方面有些相似...”等等等等。看完后经了解才知道都是致敬《双峰》的。
 
@@ -27,7 +27,7 @@ date: 2020-08-16 10:40:05
 
 
 
-![img](https://bbsimg.maxjia.com//heybox/bbs/imgs/2020/08/16/1f4007d13eb2c021301ba8435cd09922)
+![DamnGoodCooper](https://cdn.donaldxdonald.xyz/blog/twinPeaks/DamnGoodCooper.jpg)
 
 ​	
 
@@ -39,7 +39,7 @@ date: 2020-08-16 10:40:05
 
 
 
-![img](https://bbsimg.maxjia.com//heybox/bbs/imgs/2020/08/16/d0d5e6c917e39ab03dd47f374f665951)
+![BlackLodge](https://cdn.donaldxdonald.xyz/blog/twinPeaks/BlackLodge.jpg)
 
 
 

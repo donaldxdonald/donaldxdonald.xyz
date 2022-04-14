@@ -48,6 +48,8 @@ $ pnpm exec changeset init
 
 ### 生成 changeset 文件
 
+![stage1](https://cdn.donaldxdonald.xyz/blog/monorepoPart2/State1.png)
+
 ```bash
 $ pnpm exec changeset
 ```
@@ -60,11 +62,15 @@ $ pnpm exec changeset add
 
 两种方式都是一样的。然后会在命令行中根据提示选择要更新的包以及要更新版本号是更新 `major` 、`minor` 还是 `patch` 。
 
+![stage2](https://cdn.donaldxdonald.xyz/blog/monorepoPart2/Stage2.png)
+
 最后填写更新摘要，一个 changeset 文件就生成了。
 
 
 
 ### 更新版本
+
+![versioning](https://cdn.donaldxdonald.xyz/blog/monorepoPart2/Stage3.png)
 
 ```bash
 $ pnpm exec changeset version
