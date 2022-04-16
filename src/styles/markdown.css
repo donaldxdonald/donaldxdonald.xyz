@@ -38,11 +38,11 @@ code[class*=language-] {
   display: none
 }
 
-.prose p > a {
+.prose :is(p, li) > a {
   @apply relative hover:after:h-full hover:after:rounded-sm;
 }
 
-.prose p > a:after {
+.prose :is(p, li) > a:after {
   content: '';
   @apply bg-theme/50 absolute left-0 bottom-0 w-full h-1/3 -z-10 transition-all;
 }

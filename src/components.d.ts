@@ -8,6 +8,7 @@ declare module 'vue' {
     MatrixRain: typeof import('./components/MatrixRain.vue')['default']
     MdiEmailOutline: typeof import('~icons/mdi/email-outline')['default']
     MdiGithub: typeof import('~icons/mdi/github')['default']
+    MdiWaves: typeof import('~icons/mdi/waves')['default']
     Post: typeof import('./components/Post.vue')['default']
     PostList: typeof import('./components/PostList.vue')['default']
     README: typeof import('./components/README.md')['default']
