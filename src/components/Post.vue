@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Frontmatter } from '~/types'
-import { formatDate } from '~/utils/utils'
+import { Frontmatter } from '~/types';
+import { formatDate } from '~/utils/utils';
 defineProps<{
   frontmatter: Frontmatter
 }>()
@@ -18,7 +18,7 @@ defineProps<{
     <h1>
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
-    <p v-if="frontmatter.date" class="text-gray-400 border-b pb-5 text-sm">
+    <p v-if="frontmatter.date" class="text-gray-500 border-b pb-5 text-sm">
       {{ formatDate(frontmatter.date, 'YYYY-MM-DD HH:mm') }}
     </p>
   </div>

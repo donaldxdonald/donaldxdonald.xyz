@@ -29,7 +29,7 @@ date: 2022-04-23 17:18
 - [What is 'bad design'? 10 examples & how to avoid them](https://dribbble.com/stories/2022/04/12/what-is-bad-design-examples)
 	
 	> 文章列举了 10 个例子来说明不好的设计是怎样的并给出了避免这些错误的方法。提升代码水平是为了产品少出现 bug ，但前端工程师在此之外也需要了解一下用户体验相关的知识。
-- [Picture perfect images with the modern <img> element](https://stackoverflow.blog/2022/03/28/picture-perfect-images-with-the-modern-element/)
+- [Picture perfect images with the modern `<img>` element](https://stackoverflow.blog/2022/03/28/picture-perfect-images-with-the-modern-element/)
 	
 	> 一篇深入浅出介绍使用 `<img>` 元素的好文章。文章介绍了网页中的图片对性能的影响，以及如何使用预加载、懒加载、响应式图片等方法来优化网页的性能。
 - [Explain the First 10 Lines of Twitter’s Source Code to Me](https://css-tricks.com/explain-the-first-10-lines-of-twitter-source-code/)

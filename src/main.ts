@@ -7,8 +7,4 @@ import App from './App.vue'
 export const createApp = ViteSSG(
   App,
   { routes: generatedRoutes, scrollBehavior: () => { return { top: 0 } } },
-  ctx => {
-    // install all modules under `modules/`
-    Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
-  },
 )

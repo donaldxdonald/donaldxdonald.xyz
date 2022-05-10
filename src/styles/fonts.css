@@ -13,16 +13,15 @@
        url('/src/assets/fonts/Jost/Jost-VariableFont_wght.ttf') format('truetype')
 }
 
-
 @font-face {
   font-family: 'Cascadia Code PL';
   font-style: normal;
   src: local('Cascadia Code PL'),
-       url('/src/assets/fonts/Cascadia/CascadiaCodePL.ttf') format('truetype')
+       url('/src/assets/fonts/Cascadia/CascadiaCodePL-Regular.woff2') format('woff2')
 }
 
 @font-face {
   font-family: 'Cascadia Code PL Italic';
   src: local('Cascadia Code PL Italic'),
-       url('/src/assets/fonts/Cascadia/CascadiaCodePLItalic.ttf') format('truetype');
+       url('/src/assets/fonts/Cascadia/CascadiaCodePL-Italic.woff2') format('woff2');
 }

@@ -6,12 +6,12 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Jost', 'Source Han Sans SC VF', 'Microsoft YaHei UI', 'sans-serif'],
+      sans: ['Jost', 'Source Han Sans SC VF Regular', 'Microsoft YaHei UI', 'sans-serif'],
       serif: ['Consolas', 'serif'],
-      highlight: ['Jost', 'Source Han Sans SC VF', 'Microsoft YaHei UI', 'sans-serif'],
+      highlight: ['Jost', 'Source Han Sans SC VF Regular', 'Microsoft YaHei UI', 'sans-serif'],
       title: ['Agency FB', 'Bahnschrift Light', 'sans-serif'],
       italic: ['Cascadia Code PL Italic', 'sans-serif'],
-      code: ['Cascadia Code PL', 'Source Han Sans SC VF', 'Microsoft YaHei UI', 'sans-serif'],
+      code: ['Cascadia Code PL', 'Source Han Sans SC VF Regular', 'Microsoft YaHei UI', 'sans-serif'],
     },
     extend: {
       screens: {
