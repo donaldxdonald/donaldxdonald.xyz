@@ -1,5 +1,8 @@
 {
   "extends": [
     "@dndxdnd/eslint-config-vue"
-  ]
+  ],
+  "rules": {
+    "import/order": 0
+  }
 }

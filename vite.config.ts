@@ -4,17 +4,13 @@ import matter from 'gray-matter'
 import anchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Prism from 'markdown-it-prism'
-import TOC from 'markdown-it-table-of-contents'
 import { resolve } from 'path'
-import { Frontmatter } from 'src/types'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-import Inspect from 'vite-plugin-inspect'
 import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
-import { RouteRecordNormalized } from 'vue-router'
 
 export default defineConfig({
   resolve: {
@@ -39,13 +35,13 @@ export default defineConfig({
           dir: 'src/posts', baseRoute: '/post',
         },
       ],
-      extendRoute(route: RouteRecordNormalized) {
+      extendRoute(route) {
         const path = resolve(__dirname, route.component.slice(1))
 
         const md = fs.readFileSync(path, 'utf-8')
         const { data } = matter(md)
         route.meta = Object.assign(route.meta || {})
-        route.meta.frontmatter = data as Frontmatter
+        route.meta.frontmatter = data
 
         return route
       },
@@ -101,16 +97,7 @@ export default defineConfig({
             symbol: '#',
           }),
         })
-        md.use(TOC, {
-          includeLevel: [1, 2, 3],
-        })
       },
-    }),
-
-    // https://github.com/antfu/vite-plugin-inspect
-    Inspect({
-      // change this to enable inspect for debugging
-      enabled: false,
     }),
   ],
 
