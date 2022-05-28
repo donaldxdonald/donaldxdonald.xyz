@@ -54,19 +54,19 @@ const keywords: Record<number, Keyword> = reactive({
   },
   22: {
     text: 'programming',
-    link: '#',
+    link: '/posts',
   },
   36: {
     text: 'photo',
-    link: '#',
+    link: '/posts',
   },
   38: {
     text: 'film',
-    link: '#',
+    link: '/posts',
   },
   43: {
     text: 'music',
-    link: '#',
+    link: '/posts',
   },
   53: {
     text: 'notes',
@@ -124,5 +124,9 @@ const keywords: Record<number, Keyword> = reactive({
 .context-wrap:hover  .content-block {
   background-color: #000;
   color: #000;
+}
+
+.intro-kw {
+  text-shadow: 0 5px 7px #f00;
 }
 </style>
