@@ -5,18 +5,6 @@ const postBlocks: PostBlock[] = [
     type: PostType.LATEST,
     label: 'Latest',
     url: '',
-    limit: 5
-  },
-  {
-    type: PostType.FILM,
-    label: 'Film',
-    url: '',
-    limit: 0
-  },
-  {
-    type: PostType.PROGRAMMING,
-    label: 'Programming',
-    url: '',
     limit: 0
   },
 ]
