@@ -21,7 +21,7 @@ ANTLR v4 是一款功能强大的**语法分析器生成器**，可以用来读�
 
 上面代码经过 Antlr 解析后便成了下图
 
-![image-20211105221346631](https://raw.githubusercontent.com/donaldxdonald/DonaldxBlog/master/docs/articles/AST/Antlr4Summary.assets/image-20211105221346631.png)
+![image-20211105221346631](https://cdn.donaldxdonald.xyz/blog/antlr4/image-20211105221346631.png)
 
 
 
@@ -34,7 +34,7 @@ ANTLR v4 是一款功能强大的**语法分析器生成器**，可以用来读�
 
 ANTLR v4 的语法规则分为**词法 (Lexer)** 规则和**语法 (Parser)** 规则：词法规则定义了怎么将代码字符串序列转换成标记序列；语法规则定义怎么将标记序列转换成语法树。通常，词法规则的规则名以大写字母命名，而语法规则的规则名以小写字母开始。
 
-![image-20211105221538440](https://raw.githubusercontent.com/donaldxdonald/DonaldxBlog/master/docs/articles/AST/Antlr4Summary.assets/image-20211105221538440.png)
+![image-20211105221538440](https://cdn.donaldxdonald.xyz/blog/antlr4/image-20211105221538440.png)
 
 
 
@@ -125,20 +125,20 @@ WS : [ \t\r\n]+ -> skip ;    // 跳过空格、制表符、回车符和换行符
 TOKEN:  TEST
 ```
 
-| **语法**        | **描述**                                                     |
-| --------------- | ------------------------------------------------------------ |
-| T  (冒号左边的) | 在当前行匹配 token T。Token 通常以大写字母开头，对应上方代码中的 TOKEN |
-| T  (冒号右边的) | 调用规则 T ，可以是`token` 也可以是 `fragment` 中的 `rule`，对应上方代码中的 TEST |
-| ’x’             | 匹配单引号内的字符序列，如 ’while’ 或者 ’=’                  |
-| [xyz]           | 匹配中括号内的字符，比如 [1-9] 即匹配 1 到 9 之间的值。      |
-| 'x'..'y'        | 匹配 x 和 y 之间的任意字符。'a'..'z' 等价于 [a-z]            |
-| .               | 匹配任意一个值                                               |
-| ~x              | 匹配任意不在x中的值                                          |
-| x?              | 匹配 x 0 次 或 1 次                                          |
-| X*              | 匹配 x 0 次以上                                              |
-| x+              | 匹配 x 1 次以上                                              |
-| x \| y          | x 或 y                                                       |
-| {«action»}      | 示例： `END : ('endif'|'end') {System.out.println("found an end");} ;` Lexer 的 actions 在 4.2 版本前只能写在`rule`后面，4.2 版本后可以卸载任意地方了。  Lexer 会执行写在正确地方的 action。 Action 里的指令语法应跟目标语言的语法一致，因为 Antlr 只是把里面的代码原封不动地复制到生成的编译代码中。 只会执行最外层的`rule`对应的 action 。如： `PUNCTUATION:    DOT    |    COMMA; DOT:    '.'; COMMA:    ',' {  console.log("I got a comma.")  }; ` 以上代码中，匹配到 PUNCTUATION 时，不会执行 COMMA 里的 action。 |
+| **语法**        | **描述**                                                                                                                                                                                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| T  (冒号左边的) | 在当前行匹配 token T。Token 通常以大写字母开头，对应上方代码中的 TOKEN                                                                                                                                                                                       |
+| T  (冒号右边的) | 调用规则 T ，可以是`token` 也可以是 `fragment` 中的 `rule`，对应上方代码中的 TEST                                                                                                                                                                            |
+| ’x’             | 匹配单引号内的字符序列，如 ’while’ 或者 ’=’                                                                                                                                                                                                                  |
+| [xyz]           | 匹配中括号内的字符，比如 [1-9] 即匹配 1 到 9 之间的值。                                                                                                                                                                                                      |
+| 'x'..'y'        | 匹配 x 和 y 之间的任意字符。'a'..'z' 等价于 [a-z]                                                                                                                                                                                                            |
+| .               | 匹配任意一个值                                                                                                                                                                                                                                               |
+| ~x              | 匹配任意不在x中的值                                                                                                                                                                                                                                          |
+| x?              | 匹配 x 0 次 或 1 次                                                                                                                                                                                                                                          |
+| X*              | 匹配 x 0 次以上                                                                                                                                                                                                                                              |
+| x+              | 匹配 x 1 次以上                                                                                                                                                                                                                                              |
+| x \| y          | x 或 y                                                                                                                                                                                                                                                       |
+| {«action»}      | 示例： `END : ('endif'                                                                                                                                                                                                                                       | 'end') {System.out.println("found an end");} ;` Lexer 的 actions 在 4.2 版本前只能写在`rule`后面，4.2 版本后可以卸载任意地方了。  Lexer 会执行写在正确地方的 action。 Action 里的指令语法应跟目标语言的语法一致，因为 Antlr 只是把里面的代码原封不动地复制到生成的编译代码中。 只会执行最外层的`rule`对应的 action 。如： `PUNCTUATION:    DOT | COMMA; DOT:    '.'; COMMA:    ',' {  console.log("I got a comma.")  }; ` 以上代码中，匹配到 PUNCTUATION 时，不会执行 COMMA 里的 action。 |
 | {«p»}?          | 语义断言  «p»。如果在运行环境中，该断言判断为 false ，那么其附近的`rule`将会变为“不可见的”，同样地， «p»中的指令应跟目标语言的语法一致。 详情见[官方文档](https://github.com/antlr/antlr4/blob/4.6/doc/predicates.md) 需要注意的是，语义断言需在 action 之前 |
 
 ### Fragment
@@ -322,20 +322,20 @@ channels {  WSCHANNEL, MYHIDDEN  }
 
 Parser 主要是定义目标语言的语法规则，比如识别编程语言中的**声明语句**
 
-| **语法**        | **描述**                                                     |
-| --------------- | ------------------------------------------------------------ |
-| r (冒号左边的)  | 在当前行匹配 `rule` r。`rule`通常以小写字母开头              |
-| T  (冒号右边的) | 匹配 `Token` T ，即 Lexer 中的 `Token`                       |
-| ’x’             | 同 Lexer                                                     |
+| **语法**        | **描述**                                                                                                          |
+| --------------- | ----------------------------------------------------------------------------------------------------------------- |
+| r (冒号左边的)  | 在当前行匹配 `rule` r。`rule`通常以小写字母开头                                                                   |
+| T  (冒号右边的) | 匹配 `Token` T ，即 Lexer 中的 `Token`                                                                            |
+| ’x’             | 同 Lexer                                                                                                          |
 | r [«args»]      | 像执行函数一样匹配 `rule` r 的同时传入中括号内定义的一系列参数。 参数的语法与生成目标语言一致 多个表达式以`,`分隔 |
-| .               | 同 Lexer                                                     |
-| ~x              |                                                              |
-| x?              |                                                              |
-| X*              |                                                              |
-| x+              |                                                              |
-| x \| y          |                                                              |
-| {«action»}      |                                                              |
-| {«p»}?          |                                                              |
+| .               | 同 Lexer                                                                                                          |
+| ~x              |                                                                                                                   |
+| x?              |                                                                                                                   |
+| X*              |                                                                                                                   |
+| x+              |                                                                                                                   |
+| x \| y          |                                                                                                                   |
+| {«action»}      |                                                                                                                   |
+| {«p»}?          |                                                                                                                   |
 
 
 
