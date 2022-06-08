@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { RouterLink, useRouter } from 'vue-router';
-import { PostType } from '~/types';
-import { formatDate } from '~/utils/utils';
+import { computed } from 'vue'
+import { RouterLink, useRouter } from 'vue-router'
+import { PostType } from '~/types'
+import { formatDate } from '~/utils/utils'
 const props = defineProps<{
   postType: PostType
   limit: number
@@ -10,19 +10,18 @@ const props = defineProps<{
 const router = useRouter()
 const routes = router.getRoutes()
   .filter(route => {
-    return route.path.startsWith('/post')
-    && route.meta.frontmatter?.date
+    return route.path.startsWith('/post') &&
+    route.meta.frontmatter?.date
   })
   .sort((a, b) => {
-    return +new Date(b.meta.frontmatter?.date as string)
-    - +new Date(a.meta.frontmatter?.date as string)
+    return +new Date(b.meta.frontmatter?.date as string) -
+    +new Date(a.meta.frontmatter?.date as string)
   })
 const posts = computed(() => routes.filter((route, index) => {
   const isLatest = props.postType === PostType.LATEST
   const matchPath = (!route.path.endsWith('.html') && route.path.startsWith(`/post/${props.postType.toLowerCase()}`))
   const matchIndex = props.limit ? index < props.limit : true
   return (isLatest || matchPath) && matchIndex
-  
 }))
 
 </script>
