@@ -24,17 +24,17 @@ module.exports = {
         DEFAULT: {
           css: {
             '--tw-prose-headings': theme('colors.theme'),
-            'p': {
+            p: {
               textAlign: 'justify',
             },
-            'code': {
+            code: {
               fontWeight: '300',
               fontFamily: theme('fontFamily.code').join(', '),
             },
-            'li': {
+            li: {
               fontWeight: '300',
             },
-            'a': {
+            a: {
               textDecoration: 'none',
               fontWeight: '300',
             },

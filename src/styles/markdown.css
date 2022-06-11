@@ -28,7 +28,7 @@ code[class*=language-] {
 }
 
 .prose p {
-  @apply font-light;
+  @apply font-normal;
   margin-block-start: 1em;
   margin-block-end: 1em;
 
@@ -39,7 +39,7 @@ code[class*=language-] {
 }
 
 .prose :is(p, li) > a {
-  @apply border-b-theme border-b-2 hover:opacity-60;
+  @apply border-b-theme border-b-2 hover:opacity-60 font-medium;
 }
 
 .prose ol li > a {
