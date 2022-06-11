@@ -9,7 +9,7 @@ date: 2022-06-11 14:16
 
 自从买了树莓派以来，基本上都是用来做旁路由用了，装过一下 Jellyfin 用作影音管理，但是又感觉太丑了点，感觉折腾下来还不如直接用移动硬盘（
 
-主要是用 docker 安装 OpenWrt 使用，科学上网之余解锁下网易云(虽然现在不太经常用网易云了)。由于经常性重装树莓派/ OpenWrt，就打算写文章整理一下过程，免得过一段时间又到处找资料。
+主要是用 docker 安装 OpenWrt 使用，科学上网之余解锁下网易云（虽然现在不太经常用网易云了）。由于经常性重装树莓派 / OpenWrt，就打算写文章整理一下过程，免得过一段时间又到处找资料。
 
 ## 环境（参考）
 
@@ -54,12 +54,11 @@ services:
     privileged: true
     command: /sbin/init
     volumes:
-            - ./data/network:/etc/config/network
-    restart: always
+      - ./data/network:/etc/config/network
 networks:
   default:
     external:
-			name: macnet
+      name: macnet
 ```
 
 OpenWrt 容器的 network 配置主要修改 Lan 口部分：
