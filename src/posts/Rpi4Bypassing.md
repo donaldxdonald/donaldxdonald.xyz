@@ -140,7 +140,7 @@ CONTAINER ID        IMAGE                                                   COMM
       post-down ip link del macvlan link eth0 type macvlan mode bridge
     ```
     
-    **注意：** 树莓派设置了静态 ip 连接后，下次换其他路由器或者网络环境时需要提前将其修改会 DHCP，否则就连不上网络，无法通过 SSH 连接树莓派了，只能通过连接 HDMI 给树莓派本地修改网络配置了。
+    **注意：** 树莓派设置了静态 ip 连接后，下次换其他路由器或者网络环境时需要提前将其修改回 DHCP，否则就连不上网络，无法通过 SSH 连接树莓派了，只能通过连接 HDMI 给树莓派本地修改网络配置了。
 
 
 
