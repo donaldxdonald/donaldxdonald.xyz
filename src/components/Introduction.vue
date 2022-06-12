@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, reactive } from 'vue';
-import { Contact, Keyword } from '~/types';
-import { INTRO } from '~/utils/constant';
-import { contrastTextColor } from '~/utils/utils';
+import { computed, reactive } from 'vue'
+import { Contact, Keyword } from '~/types'
+import { INTRO } from '~/utils/constant'
+import { contrastTextColor } from '~/utils/utils'
 
 const paragraph: string[] = reactive(INTRO.MAIN_CONTENT.split(' '))
 
@@ -13,6 +13,7 @@ const props = defineProps({
   },
 })
 
+// eslint-disable-next-line func-call-spacing
 const emit = defineEmits<{
   (e: 'hovering', value: string): void
   (e: 'leaving'): void
@@ -24,7 +25,9 @@ const onHoverKw = (content: string): void => {
 
 const textColor = computed(() => {
   let color = '#333'
-  if (props.bgColor !== '') { color = contrastTextColor(props.bgColor) }
+  if (props.bgColor !== '') {
+    color = contrastTextColor(props.bgColor)
+  }
 
   return color
 })
@@ -127,6 +130,6 @@ const keywords: Record<number, Keyword> = reactive({
 }
 
 .intro-kw {
-  text-shadow: 0 5px 7px #f00;
+  text-shadow: 0 5px 7px rgb(125 75 222);
 }
 </style>
