@@ -14,18 +14,23 @@ defineProps<{
   >
     <div class="w-full text-center my-8">
       <a
-        class="cursor-pointer text-xl text-theme font-italic"
+        class="link title-text"
         href="/"
-      >DonaldxDonald</a>
+      >Donald</a>
+      <span class="title-text cursor-default font-code"> x </span>
+      <a
+        class="link title-text"
+        href="/posts"
+      >Posts</a>
     </div>
     <h1>
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
     <p
       v-if="frontmatter.date"
-      class="text-gray-500 border-b pb-5 text-sm"
+      class="text-slate-600 font-code border-b border-dashed border-theme pb-5 text-sm"
     >
-      {{ formatDate(frontmatter.date, 'YYYY-MM-DD HH:mm') }}
+      {{ formatDate(frontmatter.date, 'YYYY/MM/DD HH:mm') }}
     </p>
   </div>
   <article
@@ -36,3 +41,13 @@ defineProps<{
     <slot />
   </article>
 </template>
+
+<style scoped>
+.link {
+  @apply cursor-pointer font-italic text-theme;
+}
+
+.title-text {
+  @apply font-bold text-xl;
+}
+</style>

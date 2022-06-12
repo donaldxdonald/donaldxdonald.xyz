@@ -49,12 +49,15 @@ const contactList: Contact[] = reactive([
 const keywords: Record<number, Keyword> = reactive({
   3: {
     text: 'Donald',
+    link: '/posts',
   },
   4: {
     text: 'Mok',
+    link: '/posts',
   },
   20: {
     text: 'made',
+    link: '/posts',
   },
   22: {
     text: 'programming',
@@ -73,7 +76,7 @@ const keywords: Record<number, Keyword> = reactive({
     link: '/posts',
   },
   53: {
-    text: 'notes',
+    text: 'posts',
     link: '/posts',
   },
 })

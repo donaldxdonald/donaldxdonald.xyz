@@ -3,7 +3,7 @@ import { PostBlock, PostType } from '~/types'
 const postBlocks: PostBlock[] = [
   {
     type: PostType.LATEST,
-    label: 'Latest',
+    label: PostType.LATEST,
     url: '',
     limit: 0,
   },
@@ -22,9 +22,8 @@ const postBlocks: PostBlock[] = [
         :key="index"
         class="posts-block mt-5 w-full"
       >
-        <div class="block-header px-4 py-2 mb-5 hover:bg-theme/25 transition-all flex justify-between items-center rounded-md text-theme">
-          <span class="block-title text-2xl font-italic">{{ block.label }}</span>
-          <mdi-waves />
+        <div class="px-4 py-2 mb-5 text-theme">
+          <span class="block-title text-2xl font-sans">{{ block.label }}</span>
         </div>
         <div class="block-body my-5">
           <PostList

@@ -31,7 +31,7 @@ const posts = computed(() => routes.filter((route, index) => {
     <router-link
       v-for="post in posts"
       :key="post.path"
-      class="w-full mb-8 flex flex-col items-start prose-p px-4 py-2 hover:outline-dashed hover:outline-theme hover:outline-2 transition-all"
+      class="w-full mb-8 flex flex-col items-start prose-p px-4 py-2 hover:outline-dashed hover:outline-theme transition-all"
       :to="post.path"
     >
       <span class="w-full pb-3 text-ellipsis whitespace-nowrap overflow-hidden text-slate-600">
