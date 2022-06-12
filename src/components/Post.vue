@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Frontmatter } from '~/types';
-import { formatDate } from '~/utils/utils';
+import { Frontmatter } from '~/types'
+import { formatDate } from '~/utils/utils'
 defineProps<{
   frontmatter: Frontmatter
 }>()
@@ -13,17 +13,24 @@ defineProps<{
     :class="frontmatter.display ? 'main-layout': 'prose-layout'"
   >
     <div class="w-full text-center my-8">
-      <a class="cursor-pointer text-xl text-theme font-italic" href="/">DonaldxDonald</a>
+      <a
+        class="cursor-pointer text-xl text-theme font-italic"
+        href="/"
+      >DonaldxDonald</a>
     </div>
     <h1>
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
-    <p v-if="frontmatter.date" class="text-gray-500 border-b pb-5 text-sm">
+    <p
+      v-if="frontmatter.date"
+      class="text-gray-500 border-b pb-5 text-sm"
+    >
       {{ formatDate(frontmatter.date, 'YYYY-MM-DD HH:mm') }}
     </p>
   </div>
   <article
-    ref="content" class="prose m-auto pb-32"
+    ref="content"
+    class="prose m-auto pb-32"
     :class="frontmatter.display ? 'main-layout': 'prose-layout'"
   >
     <slot />

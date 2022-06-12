@@ -6,5 +6,10 @@ import App from './App.vue'
 // https://github.com/antfu/vite-ssg
 export const createApp = ViteSSG(
   App,
-  { routes: generatedRoutes, scrollBehavior: () => { return { top: 0 } } },
+  {
+    routes: generatedRoutes,
+    scrollBehavior: () => {
+      return { top: 0 }
+    },
+  },
 )

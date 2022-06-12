@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, Ref, onMounted } from 'vue'
+import { onMounted, ref, Ref } from 'vue'
 const matrixCanvas: Ref<HTMLCanvasElement | null> = ref(null)
 let canvas: HTMLCanvasElement | null
 let context: CanvasRenderingContext2D | null

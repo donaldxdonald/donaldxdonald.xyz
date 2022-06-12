@@ -19,8 +19,8 @@ date: 2022-02-12 11:52
 
 ```json
 {
-    "style": object (ParagraphStyle),
-    "elements":  [{object (ParagraphElement)}]
+  "style": "ParagraphStyle",
+  "elements": ["ParagraphElement"]
 }
 ```
 

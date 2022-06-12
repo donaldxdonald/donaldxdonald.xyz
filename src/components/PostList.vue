@@ -29,7 +29,8 @@ const posts = computed(() => routes.filter((route, index) => {
 <template>
   <div class="mt-5 flex flex-col items-start not-prose">
     <router-link
-      v-for="post in posts" :key="post.path"
+      v-for="post in posts"
+      :key="post.path"
       class="w-full mb-8 flex flex-col items-start prose-p px-4 py-2 hover:outline-dashed hover:outline-theme hover:outline-2 transition-all"
       :to="post.path"
     >

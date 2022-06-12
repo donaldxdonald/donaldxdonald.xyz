@@ -53,7 +53,7 @@ openssl x509 -req -extfile <(printf "extendedKeyUsage=serverAuth\nsubjectAltName
 
 ```yml
 # docker-compose.yml
-version: '3'
+version: "3"
 
 services:
   unblockneteasemusic:
@@ -97,14 +97,14 @@ pm2 start app.js -p 80:443 -s
 ```yaml
 # yml 版本
 Rule:
-	- DOMAIN-SUFFIX,163.com,NCM
-	- PROCESS-NAME, NeteaseMusic,NCM
+  - DOMAIN-SUFFIX,163.com,NCM
+  - PROCESS-NAME, NeteaseMusic,NCM
 
 Proxy:
-	- name: 🎵 NCM
-		type: http
-		server: <Server-IP>
-    port: <Server-Port> #对应上方部署对应的80端口
+  - name: 🎵 NCM
+    type: http
+    server: <Server-IP>
+    port: <Server-Port> # 对应上方部署对应的80端口
 ```
 
 ### mixin

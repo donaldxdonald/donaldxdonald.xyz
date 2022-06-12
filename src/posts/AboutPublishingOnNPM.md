@@ -63,7 +63,7 @@ $ pnpm adduser
 
 ```yaml
 packages:
-	- 'packages/*'
+  - "packages/*"
 ```
 
 

@@ -12,21 +12,21 @@ date: 2020-11-14 12:30
 
 ```yaml
 # docker-compose.yml
-  frps:
-    image: snowdreamtech/frps
-    container_name: frps_compose
-    restart: always
-    ports:
-      # 服务端口
-      - "10055:10055"
-      # 后台管理端口
-      - "10077:10077"
-      # SSH端口
-      - "10022:10022"
-      # 外网访问端口
-      - "10080:10080"
-    volumes:
-      - ./conf/frps.ini:/etc/frp/frps.ini
+frps:
+  image: snowdreamtech/frps
+  container_name: frps_compose
+  restart: always
+  ports:
+    # 服务端口
+    - "10055:10055"
+    # 后台管理端口
+    - "10077:10077"
+    # SSH端口
+    - "10022:10022"
+    # 外网访问端口
+    - "10080:10080"
+  volumes:
+    - ./conf/frps.ini:/etc/frp/frps.ini
 ```
 
 ```ini
@@ -51,13 +51,13 @@ max_pool_count = 10
 
 ```yaml
 # docker-compose.yml
-  frpc:
-    image: snowdreamtech/frpc
-    container_name: frpc_compose
-    restart: always
-    volumes:
-      - ./conf/frpc.ini:/etc/frp/frpc.ini
-    network_mode: host
+frpc:
+  image: snowdreamtech/frpc
+  container_name: frpc_compose
+  restart: always
+  volumes:
+    - ./conf/frpc.ini:/etc/frp/frpc.ini
+  network_mode: host
 ```
 
 ```ini

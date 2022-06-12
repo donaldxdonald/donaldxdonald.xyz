@@ -98,8 +98,8 @@ $ pnpm exec changeset publish
 
 ```yaml
 - name: Install dependencies
-	run: pnpm install
-        
+   run: pnpm install
+
 - name: Create Release Pull Request or Publish to npm
     id: changesets
     	uses: changesets/action@v1

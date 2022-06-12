@@ -6,6 +6,11 @@ import { contrastTextColor } from '~/utils/utils'
 
 const paragraph: string[] = reactive(INTRO.MAIN_CONTENT.split(' '))
 
+type EmitType = {
+  (e: 'hovering', value: string): void
+  (e: 'leaving'): void
+}
+
 const props = defineProps({
   bgColor: {
     type: String,
@@ -13,11 +18,7 @@ const props = defineProps({
   },
 })
 
-// eslint-disable-next-line func-call-spacing
-const emit = defineEmits<{
-  (e: 'hovering', value: string): void
-  (e: 'leaving'): void
-}>()
+const emit = defineEmits<EmitType>()
 
 const onHoverKw = (content: string): void => {
   emit('hovering', content)
@@ -79,7 +80,10 @@ const keywords: Record<number, Keyword> = reactive({
 </script>
 
 <template>
-  <div class="mt-20 flex flex-col justify-center items-center" :style="{ color: textColor }">
+  <div
+    class="mt-20 flex flex-col justify-center items-center"
+    :style="{ color: textColor }"
+  >
     <div class="font-title hover:font-italic cursor-default text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
@@ -88,9 +92,13 @@ const keywords: Record<number, Keyword> = reactive({
         <span class="font-highlight font-bold">Hello guys!</span>
       </div>
       <span>
-        <span v-for="(content, index) in paragraph" :key="index">
+        <span
+          v-for="(content, index) in paragraph"
+          :key="index"
+        >
           <span
-            v-if="keywords[index]" class="intro-kw"
+            v-if="keywords[index]"
+            class="intro-kw"
           >
             <a
               v-if="keywords[index].link"
@@ -100,7 +108,10 @@ const keywords: Record<number, Keyword> = reactive({
             >{{ ` ${content} ` }}</a>
             <span v-else>{{ ` ${content} ` }}</span>
           </span>
-          <span v-else class="content-block">{{ keywords[index + 1] ? content : `${content} ` }}</span>
+          <span
+            v-else
+            class="content-block"
+          >{{ keywords[index + 1] ? content : `${content} ` }}</span>
         </span>
       </span>
       <div class="mt-10 text-md">
@@ -109,9 +120,18 @@ const keywords: Record<number, Keyword> = reactive({
           :key="index + item.text"
           class="flex items-center"
         >
-          <mdi-github v-if="index === 0" :color="textColor" />
-          <mdi-email-outline v-else :color="textColor" />
-          <a class="ml-2 text-xxl dark:text-slate-800 text-theme" :href="item.link">{{ item.text }}</a>
+          <mdi-github
+            v-if="index === 0"
+            :color="textColor"
+          />
+          <mdi-email-outline
+            v-else
+            :color="textColor"
+          />
+          <a
+            class="ml-2 text-xxl dark:text-slate-800 text-theme"
+            :href="item.link"
+          >{{ item.text }}</a>
         </div>
       </div>
     </div>

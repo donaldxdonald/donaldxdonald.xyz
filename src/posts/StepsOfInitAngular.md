@@ -77,61 +77,61 @@ date: 2021-08-17 19:38
 
 ```json
 {
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "app",
-            "style": "kebab-case"
-          }
-        ],
-        "indent": ["error", 2, {
-          "SwitchCase": 0
-        }],
-        "@typescript-eslint/ban-ts-comment": "warn",
-        "@typescript-eslint/no-extra-semi": "error",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/no-unused-vars": ["warn", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
-        "@typescript-eslint/type-annotation-spacing": [2, { "before": false, "after": true, "overrides": { "arrow": { "before": true, "after": true }} }],
-        "prefer-const": "error",
-        "no-underscore-dangle": "off",
-        "no-shadow": "off",
-        "@angular-eslint/no-empty-lifecycle-method": 0,
-        // 强制在关键字前后使用一致的空格 (前后腰需要)
-        "keyword-spacing": 2,
-        "no-unused-vars": "off",
-        "comma-dangle": [2, "never"],
-        // 控制逗号前后的空格
-        "comma-spacing": [2, {
-          "before": false,
-          "after": true
-        }],
-        "semi": ["warn", "never"],
-        //要求或禁止在函数标识符和其调用之间有空格
-        "func-call-spacing": 2,
-        // 强制在对象字面量的属性中键和值之间使用一致的间距
-        "key-spacing": [2, {
-          "beforeColon": false,
-          "afterColon": true
-        }],
-        // 要求箭头函数的参数使用圆括号
-        "arrow-parens": [2, "as-needed"],
-        // 指定数组的元素之间要以空格隔开(, 后面)， never参数：[ 之前和 ] 之后不能带空格，always参数：[ 之前和 ] 之后必须带空格
-        "array-bracket-spacing": [2, "never"],
-        // 禁止或强制在单行代码块中使用空格(禁用)
-        "block-spacing": [1, "never"],
-        "object-curly-spacing": [1, "always"],
-        "space-infix-ops": ["error", { "int32Hint": false }],
-        "quotes": ["error", "single"]
-      }
+  "@angular-eslint/directive-selector": [
+    "error",
+    {
+      "type": "attribute",
+      "prefix": "app",
+      "style": "camelCase"
+    }
+  ],
+  "@angular-eslint/component-selector": [
+    "error",
+    {
+      "type": "element",
+      "prefix": "app",
+      "style": "kebab-case"
+    }
+  ],
+  "indent": ["error", 2, {
+    "SwitchCase": 0
+  }],
+  "@typescript-eslint/ban-ts-comment": "warn",
+  "@typescript-eslint/no-extra-semi": "error",
+  "@typescript-eslint/no-explicit-any": "off",
+  "@typescript-eslint/no-non-null-assertion": "off",
+  "@typescript-eslint/no-unused-vars": ["warn", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
+  "@typescript-eslint/type-annotation-spacing": [2, { "before": false, "after": true, "overrides": { "arrow": { "before": true, "after": true } } }],
+  "prefer-const": "error",
+  "no-underscore-dangle": "off",
+  "no-shadow": "off",
+  "@angular-eslint/no-empty-lifecycle-method": 0,
+  // 强制在关键字前后使用一致的空格 (前后腰需要)
+  "keyword-spacing": 2,
+  "no-unused-vars": "off",
+  "comma-dangle": [2, "never"],
+  // 控制逗号前后的空格
+  "comma-spacing": [2, {
+    "before": false,
+    "after": true
+  }],
+  "semi": ["warn", "never"],
+  // 要求或禁止在函数标识符和其调用之间有空格
+  "func-call-spacing": 2,
+  // 强制在对象字面量的属性中键和值之间使用一致的间距
+  "key-spacing": [2, {
+    "beforeColon": false,
+    "afterColon": true
+  }],
+  // 要求箭头函数的参数使用圆括号
+  "arrow-parens": [2, "as-needed"],
+  // 指定数组的元素之间要以空格隔开(, 后面)， never参数：[ 之前和 ] 之后不能带空格，always参数：[ 之前和 ] 之后必须带空格
+  "array-bracket-spacing": [2, "never"],
+  // 禁止或强制在单行代码块中使用空格(禁用)
+  "block-spacing": [1, "never"],
+  "object-curly-spacing": [1, "always"],
+  "space-infix-ops": ["error", { "int32Hint": false }],
+  "quotes": ["error", "single"]
+}
 ```
 
