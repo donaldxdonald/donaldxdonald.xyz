@@ -40,7 +40,7 @@ async function buildBlogRSS() {
 
   const posts: Item[] = (await Promise.all(
     files
-      .filter(fp => !fp.includes('Weekly'))
+      .filter(fp => !fp.toLowerCase().includes('weekly'))
       .map(async filePath => {
         const md = await readFile(filePath, 'utf-8')
         const { data, content } = matter(md)
