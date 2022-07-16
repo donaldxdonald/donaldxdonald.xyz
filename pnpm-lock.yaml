@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@dndxdnd/eslint-config-vue': ^2.0.4
+  '@dndxdnd/eslint-config-vue': ^2.0.5
   '@iconify-json/carbon': ^1.0.13
   '@iconify-json/ic': ^1.0.8
   '@iconify-json/mdi': ^1.0.12
@@ -58,7 +58,7 @@ dependencies:
   vue-router: 4.0.12_vue@3.2.33
 
 devDependencies:
-  '@dndxdnd/eslint-config-vue': 2.0.4_hcfsmds2fshutdssjqluwm76uu
+  '@dndxdnd/eslint-config-vue': 2.0.5_hcfsmds2fshutdssjqluwm76uu
   '@iconify-json/carbon': 1.0.13
   '@iconify-json/ic': 1.0.8
   '@iconify-json/mdi': 1.0.12
@@ -317,8 +317,8 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
 
-  /@dndxdnd/eslint-config-ts/1.0.2_hcfsmds2fshutdssjqluwm76uu:
-    resolution: {integrity: sha512-GZ5fEoE0TEGhGpJe9MLN6inpp2TEnvf3fc8+L9WRkAXhaS2MguVThZPQKgUwowUz3okZZbFtRF4aJpmbA304WQ==}
+  /@dndxdnd/eslint-config-ts/1.0.3_hcfsmds2fshutdssjqluwm76uu:
+    resolution: {integrity: sha512-SIutf/Kms6OcxrNV+wp9SkgkhNDExQ9RrdfvChLPlgBaosbflAsbklbfvDsCWjZqetiN3qU101ZfSkZdQlTczQ==}
     peerDependencies:
       eslint: '>=7.4.0'
       typescript: '>=3.9'
@@ -345,13 +345,13 @@ packages:
       - supports-color
     dev: true
 
-  /@dndxdnd/eslint-config-vue/2.0.4_hcfsmds2fshutdssjqluwm76uu:
-    resolution: {integrity: sha512-p7fGHDYISxghCkTvZkR4eY3acRLL9HlQYUHuxq3HIZkKc7XpHJ2+HdmCxmUbs8RJD09ONL1WChhJrFTxVlIgtg==}
+  /@dndxdnd/eslint-config-vue/2.0.5_hcfsmds2fshutdssjqluwm76uu:
+    resolution: {integrity: sha512-90GEpJcIjp1FAugJJI+R2qZZpXeNrir4kQz6dZ5Ge9F+Z7jRMfoXRYLKkkC2JZ+uC40eMHcdNAc/3mHk7ab8bg==}
     peerDependencies:
       eslint: '>=7.4.0'
       typescript: '>=3.9'
     dependencies:
-      '@dndxdnd/eslint-config-ts': 1.0.2_hcfsmds2fshutdssjqluwm76uu
+      '@dndxdnd/eslint-config-ts': 1.0.3_hcfsmds2fshutdssjqluwm76uu
       eslint: 8.15.0
       eslint-plugin-vue: 9.1.0_eslint@8.15.0
       typescript: 4.6.4

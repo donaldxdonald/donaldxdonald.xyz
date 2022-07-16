@@ -20,7 +20,7 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@dndxdnd/eslint-config-vue": "^2.0.4",
+    "@dndxdnd/eslint-config-vue": "^2.0.5",
     "@iconify-json/carbon": "^1.0.13",
     "@iconify-json/ic": "^1.0.8",
     "@iconify-json/mdi": "^1.0.12",
