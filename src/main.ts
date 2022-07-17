@@ -1,7 +1,8 @@
 // register vue composition api globally
 import generatedRoutes from 'pages-generated'
 import { ViteSSG } from 'vite-ssg'
-import { RouterScrollBehavior } from 'vue-router'
+import { Router, RouterScrollBehavior } from 'vue-router'
+import { UserModule } from '~/types'
 import App from './App.vue'
 
 const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
@@ -18,5 +19,12 @@ export const createApp = ViteSSG(
   {
     routes: generatedRoutes,
     scrollBehavior,
+  },
+  ctx => {
+    Object.values(import.meta.globEager<{ install: UserModule }>('./modules/*.ts'))
+      .forEach(m => m.install(ctx))
+
+    Object.values(import.meta.globEager<{ setup: (router: Router) => void }>('./guard/*.ts'))
+      .forEach(m => m.setup(ctx.router))
   },
 )

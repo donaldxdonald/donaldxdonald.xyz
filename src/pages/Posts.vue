@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import DonaldxHeader from '~/components/DonaldxHeader.vue'
 import { PostBlock, PostType } from '~/types'
 const postBlocks: PostBlock[] = [
   {
@@ -12,15 +13,7 @@ const postBlocks: PostBlock[] = [
 
 <template>
   <div class="main-layout max-w-xl mx-auto h-full relative overflow-y-auto overflow-x-hidden">
-    <header class="mt-10 px-6 flex items-center justify-between text-theme">
-      <a
-        class="cursor-pointer text-2xl font-italic"
-        href="/"
-      >DonaldxDonald</a>
-      <a href="./feed.xml">
-        <mdi-rss class="mx-1" />
-      </a>
-    </header>
+    <DonaldxHeader />
     <div class="flex flex-col items-center justify-center">
       <div
         v-for="(block, index) in postBlocks"

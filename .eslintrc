@@ -1,5 +1,9 @@
 {
   "extends": [
     "@dndxdnd/eslint-config-vue"
-  ]
+  ],
+  "rules": {
+    "func-call-spacing": "off",
+    "@typescript-eslint/func-call-spacing": "error"
+  }
 }

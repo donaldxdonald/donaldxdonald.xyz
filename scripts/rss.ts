@@ -26,7 +26,7 @@ async function buildBlogRSS() {
 
   const options: FeedOptions = {
     author: AUTHOR,
-    title: 'DonaldxPosts',
+    title: 'DonaldxBlog',
     id: 'https://donaldxdonald.xyz/',
     link: 'https://donaldxdonald.xyz/',
     description: `It's all about Donald Mok's Blog`,

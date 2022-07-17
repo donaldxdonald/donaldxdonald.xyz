@@ -18,11 +18,22 @@ export enum PostType {
   FILM = 'Film'
 }
 
+export enum CrossOverType {
+  DONALD = 'Donald',
+  BLOG = 'Blog',
+  WEEKLY = 'Weekly'
+}
+
 export interface PostBlock {
   type: PostType
   label: string
   url: string
   limit: number
+}
+
+export type CrossOverItem = {
+  type: CrossOverType
+  href: string
 }
 
 export interface Frontmatter {
