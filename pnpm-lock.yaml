@@ -4,7 +4,6 @@ specifiers:
   '@dndxdnd/eslint-config-vue': ^2.0.5
   '@iconify-json/carbon': ^1.0.13
   '@iconify-json/mdi': ^1.0.12
-  '@sindresorhus/slugify': ^2.1.0
   '@tailwindcss/typography': ^0.5.4
   '@types/markdown-it': ^12.2.3
   '@types/markdown-it-link-attributes': ^3.0.1
@@ -62,7 +61,6 @@ devDependencies:
   '@dndxdnd/eslint-config-vue': 2.0.5_hcfsmds2fshutdssjqluwm76uu
   '@iconify-json/carbon': 1.0.13
   '@iconify-json/mdi': 1.0.12
-  '@sindresorhus/slugify': 2.1.0
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
   '@types/markdown-it': 12.2.3
   '@types/markdown-it-link-attributes': 3.0.1
@@ -486,22 +484,6 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
-    dev: true
-
-  /@sindresorhus/slugify/2.1.0:
-    resolution: {integrity: sha512-gU3Gdm/V167BmUwIn8APHZ3SeeRVRUSOdXxnt7Q/JkUHLXaaTA/prYmoRumwsSitJZWUDYMzDWdWgrOdvE8IRQ==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@sindresorhus/transliterate': 1.5.0
-      escape-string-regexp: 5.0.0
-    dev: true
-
-  /@sindresorhus/transliterate/1.5.0:
-    resolution: {integrity: sha512-/sfSkoNelLq5riqNRp5uBjHIKBi1MWZk9ubRT1WiBQuTfmDf7BeQkph2DJzRB83QagMPHk2VDjuvpy0VuwyzdA==}
-    engines: {node: '>=12'}
-    dependencies:
-      escape-string-regexp: 5.0.0
-      lodash.deburr: 4.1.0
     dev: true
 
   /@tailwindcss/typography/0.5.4_tailwindcss@3.1.6:
@@ -1966,11 +1948,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /escape-string-regexp/5.0.0:
-    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
-    engines: {node: '>=12'}
-    dev: true
-
   /escodegen/2.0.0:
     resolution: {integrity: sha512-mmHKys/C8BFUGI+MAWNcSYoORYLMdPzjrknd2Vc+bUsjN5bXcr8EhrNB+UTqfL1y3I9c4fw2ihgtMPQLBRiQxw==}
     engines: {node: '>=6.0'}
@@ -3292,10 +3269,6 @@ packages:
 
   /lodash.castarray/4.4.0:
     resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
-    dev: true
-
-  /lodash.deburr/4.1.0:
-    resolution: {integrity: sha512-m/M1U1f3ddMCs6Hq2tAsYThTBDaAKFDX3dwDo97GEYzamXi9SqUpjWi/Rrj/gf3X2n8ktwgZrlP1z6E3v/IExQ==}
     dev: true
 
   /lodash.isplainobject/4.0.6:
