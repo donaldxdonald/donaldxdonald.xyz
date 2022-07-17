@@ -104,28 +104,28 @@ DOM Node ====> **Blot**
 
 ![img](https://cdn.donaldxdonald.xyz/blog/WebRTEEvo/example-check-this-out.png)
 
-```JSON
+```json
 {
-    "ops": [
-        {
-            "attributes": {
-                "bold": true
-            },
-            "insert": "Check"
-        },
-        {
-            "insert": " "
-        },
-        {
-            "attributes": {
-                "link": "https://www.markji.com/"
-            },
-            "insert": "this"
-        },
-        {
-            "insert": " out ~"
-        }
-    ]
+  "ops": [
+    {
+      "attributes": {
+        "bold": true
+      },
+      "insert": "Check"
+    },
+    {
+      "insert": " "
+    },
+    {
+      "attributes": {
+        "link": "https://www.markji.com/"
+      },
+      "insert": "this"
+    },
+    {
+      "insert": " out ~"
+    }
+  ]
 }
 ```
 
@@ -152,7 +152,7 @@ Quill 的特点是：
 
 Marijn 觉得当时市面上的开源编辑器都没有一个采用他认为是理想的方法，且很多还是使用着旧的范式来设计，使用着 `contentEditable`来实现。这样子开发者对文档内容能控制的范围就很小，而这又是很容易被用户和浏览器修改的。虽然 ProseMirror 还是基于 `contentEditable` 实现编辑功能了，毕竟自己重新实现一套选区逻辑太麻烦了。
 
-ProseMirror 是有 schema （范式）的，所以定义好了 schema 以后 ProseMirror 可以替你实现自动化 parser 。框架层面定义好了新引入一个 Node 需要什么属性和方法，比如 `nodeFromJSON` 方法做结构到 JSON 的转换，`toDOM` 方法定义如何将结构数据转换为 DOM（有点类似 JSX ）。ProseMirror 就在中间这一层做了 JSON 数据到 DOM 的变更管理。
+ProseMirror 是有 schema （范式）的，所以定义好了 schema 以后 ProseMirror 可以替你实现自动化 parser 。框架层面定义好了新引入一个 Node 需要什么属性和方法，比如 `nodeFromJSON` 方法做结构到 json 的转换，`toDOM` 方法定义如何将结构数据转换为 DOM（有点类似 JSX ）。ProseMirror 就在中间这一层做了 json 数据到 DOM 的变更管理。
 
 
 
@@ -160,41 +160,41 @@ ProseMirror 是有 schema （范式）的，所以定义好了 schema 以后 Pro
 
 ![img](https://cdn.donaldxdonald.xyz/blog/WebRTEEvo/example-check-this-out.png)
 
-```JSON
+```json
 {
-    "type": "paragraph",
-    "content": [
+  "type": "paragraph",
+  "content": [
+    {
+      "type": "text",
+      "marks": [
         {
-            "type": "text",
-            "marks": [
-                {
-                    "type": "strong"
-                }
-            ],
-            "text": "Check"
-        },
-        {
-            "type": "text",
-            "text": " "
-        },
-        {
-            "type": "text",
-            "marks": [
-                {
-                    "type": "link",
-                    "attrs": {
-                        "href": "https://www.markji.com",
-                        "title": ""
-                    }
-                }
-            ],
-            "text": "this"
-        },
-        {
-            "type": "text",
-            "text": " out ~"
+          "type": "strong"
         }
-    ]
+      ],
+      "text": "Check"
+    },
+    {
+      "type": "text",
+      "text": " "
+    },
+    {
+      "type": "text",
+      "marks": [
+        {
+          "type": "link",
+          "attrs": {
+            "href": "https://www.markji.com",
+            "title": ""
+          }
+        }
+      ],
+      "text": "this"
+    },
+    {
+      "type": "text",
+      "text": " out ~"
+    }
+  ]
 }
 ```
 
@@ -203,7 +203,7 @@ ProseMirror 是有 schema （范式）的，所以定义好了 schema 以后 Pro
 ProseMirror 的特点是：
 
 1. 依赖浏览器原生编辑能力 `contentEditable` (L1)
-2. 更抽象的 JSON 文档模型。ProseMirror 只定义了可配置的模型框架，具体的结构可以在实际开发的时候自定义。
+2. 更抽象的 json 文档模型。ProseMirror 只定义了可配置的模型框架，具体的结构可以在实际开发的时候自定义。
 3. 嵌套的树形结构。能支持复杂结构的内容。
 4. 对协同编辑的良好支持。从诞生之初，ProseMirror 就开始关注着协同编辑的支持。
 5. 1.0 后加入了不可变数据，使得编辑器的数据处理有了一个完整的数据流，稳定且可控。
@@ -226,7 +226,7 @@ Draft.js 的特点是：
 2. 用 React 来实现视图层
 3. 内容的存储和渲染逻辑分离
 4. 使用 Immutable 数据
-5. 虽然也抽象了基于 JSON 的数据模型，但是对于嵌套数据的支持有些弱
+5. 虽然也抽象了基于 json 的数据模型，但是对于嵌套数据的支持有些弱
 
 
 
@@ -244,43 +244,43 @@ Slate 同样的是一个编辑器框架，而不是开箱即用的编辑器工�
 
 ![example-slate](https://cdn.donaldxdonald.xyz/blog/WebRTEEvo/example-slate.png)
 
-```JSON
+```json
 {
-    "object": "block",
-    "type": "paragraph",
-    "nodes": [
-      {
-        "object": "text",
-        "text": "This is editable "
-      },
-      {
-        "object": "text",
-        "text": "rich",
-        "marks": [{ "type": "bold" }]
-      },
-      {
-        "object": "text",
-        "text": " text, "
-      },
-      {
-        "object": "text",
-        "text": "much",
-        "marks": [{ "type": "italic" }]
-      },
-      {
-        "object": "text",
-        "text": " better than a "
-      },
-      {
-        "object": "text",
-        "text": "<textarea>",
-        "marks": [{ "type": "code" }]
-      },
-      {
-        "object": "text",
-        "text": "!"
-      }
-    ]
+  "object": "block",
+  "type": "paragraph",
+  "nodes": [
+    {
+      "object": "text",
+      "text": "This is editable "
+    },
+    {
+      "object": "text",
+      "text": "rich",
+      "marks": [{ "type": "bold" }]
+    },
+    {
+      "object": "text",
+      "text": " text, "
+    },
+    {
+      "object": "text",
+      "text": "much",
+      "marks": [{ "type": "italic" }]
+    },
+    {
+      "object": "text",
+      "text": " better than a "
+    },
+    {
+      "object": "text",
+      "text": "<textarea>",
+      "marks": [{ "type": "code" }]
+    },
+    {
+      "object": "text",
+      "text": "!"
+    }
+  ]
 }
 ```
 
@@ -290,7 +290,7 @@ Slate 同样的是一个编辑器框架，而不是开箱即用的编辑器工�
 
 1. 依赖浏览器原生编辑能力 `contentEditable` (L1)
 2. 用 React 来实现视图层
-3. 支持嵌套的 JSON 数据结构
+3. 支持嵌套的 json 数据结构
 4. Immutable 数据
 5. 插件机制为核心
 6. 有约束数据的 Schema
@@ -304,7 +304,7 @@ Slate 在架构上进行了一个大更新，作者称 “整个框架都从头�
 1. 将底层逻辑抽离出来 Slate Core ，与视图层分离
 2. 用 TypeScript 重写
 3. 简化插件机制，插件不再与渲染逻辑耦合
-4. 用简单的 JSON 对象替换 Immutable.js
+4. 用简单的 json 对象替换 Immutable.js
 5. 自有概念和一些 Commands 更精简更抽象，改名为 Transforms
 
 
@@ -313,19 +313,19 @@ Slate 在架构上进行了一个大更新，作者称 “整个框架都从头�
 
 ![example-slate](https://cdn.donaldxdonald.xyz/blog/WebRTEEvo/example-slate.png)
 
-```CSS
+```json
 {
-    type: 'paragraph',
-    children: [
-      { text: 'This is editable ' },
-      { text: 'rich', bold: true },
-      { text: ' text, ' },
-      { text: 'much', italic: true },
-      { text: ' better than a ' },
-      { text: '<textarea>', code: true },
-      { text: '!' },
-    ],
-},
+  "type": "paragraph",
+  "children": [
+    { "text": "This is editable " },
+    { "text": "rich", "bold": true },
+    { "text": " text, " },
+    { "text": "much", "italic": true },
+    { "text": " better than a " },
+    { "text": "<textarea>", "code": true },
+    { "text": "!" }
+  ]
+}
 ```
 
 

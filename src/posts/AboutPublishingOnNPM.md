@@ -39,7 +39,7 @@ $ pnpm adduser
 
 首先项目根目录创建 `packages` 文件夹，里面放各个 eslint 规则的 repo。我的项目结构大致如下：
 
-```bash
+```shell
 ├─LICENSE
 ├─README.md
 ├─package.json
@@ -84,7 +84,7 @@ $ pnpm run publish
 
 正常来说，步骤就这样，但是我也遇到了一个~~问题~~
 
-```bash
+```shell
 npm ERR! code E403
 npm ERR! 403 403 Forbidden - PUT https://registry.npmjs.org/@dxd%2feslint-config - Forbidden
 npm ERR! 403 In most cases, you or one of your dependencies are requesting

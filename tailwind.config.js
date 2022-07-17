@@ -1,3 +1,6 @@
+const sansBase = ['system-ui', '—apple-system', 'Segoe UI', 'Rototo', 'Emoji', 'Helvetica', 'Arial', 'sans-serif']
+const serifBase = ['Georgia', 'Cambria', "Times New Roman", 'Times', 'serif']
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -6,12 +9,11 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Jost', 'Source Han Sans SC VF Regular', 'Microsoft YaHei UI', 'sans-serif'],
-      serif: ['Consolas', 'serif'],
-      highlight: ['Jost', 'Source Han Sans SC VF Regular', 'Microsoft YaHei UI', 'sans-serif'],
-      title: ['Agency FB', 'Bahnschrift Light', 'sans-serif'],
-      italic: ['Cascadia Code PL Italic', 'sans-serif'],
-      code: ['Cascadia Code PL', 'Source Han Sans SC VF Regular', 'Microsoft YaHei UI', 'sans-serif'],
+      sans: ['Jost', 'Noto Sans', ...sansBase],
+      serif: ['Consolas', ...serifBase],
+      title: ['Agency FB', 'Bahnschrift Light', ...sansBase],
+      italic: ['Cascadia Code PL Italic', ...sansBase],
+      mono: ['PT Mono', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
     },
     extend: {
       screens: {
@@ -26,10 +28,6 @@ module.exports = {
             '--tw-prose-headings': theme('colors.theme'),
             p: {
               textAlign: 'justify',
-            },
-            code: {
-              fontWeight: '300',
-              fontFamily: theme('fontFamily.code').join(', '),
             },
             li: {
               fontWeight: '300',

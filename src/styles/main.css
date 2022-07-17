@@ -4,11 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-  width: 5px;
-  height: 1px;
-  @apply bg-purple-100 hover:w-5;
+html {
+  scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar {
+  @apply bg-purple-100 w-1;
+}
+
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: none;

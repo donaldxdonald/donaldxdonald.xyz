@@ -1,4 +1,4 @@
-@import 'dracula-prism/dist/css/dracula-prism.min.css';
+@import './prism.css';
 
 .prose {
   --prism-block-font-size: 0.8rem;
@@ -6,7 +6,7 @@
 }
 
 code[class*=language-] {
-  @apply font-code;
+  @apply font-mono;
 }
 
 .prose img {
@@ -14,10 +14,15 @@ code[class*=language-] {
 }
 
 .prose h1 {
-  @apply text-2xl font-extrabold;
+  @apply text-2xl font-extrabold text-theme;
 }
+
+.prose h1 strong {
+  font-weight: 900;
+}
+
 .prose h2 {
-  @apply text-xl font-semibold mt-14;
+  @apply text-xl font-semibold;
 }
 .prose h3 {
   @apply text-lg font-medium mt-10;
@@ -27,19 +32,12 @@ code[class*=language-] {
   @apply relative;
 }
 
-.prose p {
-  @apply font-normal;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-
-}
-
 .prose code::before, .prose code::after {
   display: none
 }
 
 .prose :is(p, li) > a {
-  @apply border-b-theme border-b-2 hover:opacity-60 font-medium;
+  @apply border-b-theme border-b-2 hover:opacity-60 font-normal;
 }
 
 .prose ol li > a {
@@ -47,38 +45,13 @@ code[class*=language-] {
 }
 
 
-.prose ol, .prose ul {
-  padding-inline-start: 2rem;
+.prose :is(ol, ul) li {
+  @apply font-normal;
 }
 
-.prose :is(p, h1, h2, h3) code {
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+  font-weight: normal !important;
   @apply rounded py-1 px-2 bg-gray-200;
-}
-
-.table-of-contents {
-  @apply opacity-0 hover:opacity-100 fixed left-0 top-1/2 -translate-y-1/2 transition-all w-1/4 text-sm max-h-72 overflow-y-auto;
-}
-
-.table-of-contents ul {
-  @apply list-none
-}
-
-.table-of-contents ul li {
-  @apply relative;
-}
-
-.table-of-contents ul li a {
-  @apply relative hover:after:opacity-100;
-}
-
-.table-of-contents ul li a::after {
-  content: '';
-  @apply opacity-0 absolute left-0 bottom-0 h-2/5 w-full -z-10 bg-theme/70 transition-all;
-}
-
-.table-of-contents ul li::after {
-  content: '';
-  @apply absolute -left-4 top-1/2 -translate-y-1/2 bg-theme/50 w-3 h-px;
 }
 
 .prose .header-anchor {
@@ -87,4 +60,13 @@ code[class*=language-] {
 
 .prose :is(h1,h2,h3):hover .header-anchor {
   @apply opacity-50;
+}
+
+.prose blockquote {
+  @apply not-italic font-normal opacity-60;
+}
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
 }

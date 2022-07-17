@@ -17,7 +17,7 @@ defineProps<{
         class="link title-text"
         href="/"
       >Donald</a>
-      <span class="title-text cursor-default font-code"> x </span>
+      <span class="title-text cursor-default font-mono"> x </span>
       <a
         class="link title-text"
         href="/posts"
@@ -28,7 +28,7 @@ defineProps<{
     </h1>
     <p
       v-if="frontmatter.date"
-      class="text-slate-600 font-code border-b border-dashed border-theme pb-5 text-sm"
+      class="text-slate-600 font-mono border-b border-dashed border-theme pb-5 text-sm"
     >
       {{ formatDate(frontmatter.date, 'YYYY/MM/DD HH:mm') }}
     </p>

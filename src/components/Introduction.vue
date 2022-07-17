@@ -92,7 +92,7 @@ const keywords: Record<number, Keyword> = reactive({
     </div>
     <div class="context-wrap max-w-sm main-layout font-sans">
       <div align="left">
-        <span class="font-highlight font-bold">Hello guys!</span>
+        <span class="font-bold">Hello guys!</span>
       </div>
       <span>
         <span

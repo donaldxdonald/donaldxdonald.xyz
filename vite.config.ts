@@ -9,8 +9,8 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
+import Markdown from 'vite-plugin-vue-markdown'
 
 export default defineConfig({
   resolve: {
@@ -75,8 +75,6 @@ export default defineConfig({
       autoInstall: true,
     }),
 
-    // https://github.com/antfu/vite-plugin-md
-    // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
       wrapperComponent: 'post',
       headEnabled: true,
@@ -86,7 +84,8 @@ export default defineConfig({
           plugins: ['show-language'],
         })
         md.use(LinkAttributes, {
-          pattern: /^https?:\/\//,
+          pattern: /a/,
+          matcher: (link: string) => /^https?:\/\//.test(link),
           attrs: {
             target: '_blank',
             rel: 'noopener',
@@ -95,6 +94,7 @@ export default defineConfig({
         md.use(anchor, {
           permalink: anchor.permalink.linkInsideHeader({
             symbol: '#',
+            renderAttrs: () => ({ 'aria-hidden': 'true' }),
           }),
         })
       },
