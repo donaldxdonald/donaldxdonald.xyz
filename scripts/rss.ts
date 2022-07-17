@@ -21,26 +21,21 @@ const AUTHOR: Author = {
   link: 'https://donaldxdonald.xyz/',
 }
 
+const COPY_RIGHT = 'CC BY-NC-SA 4.0 2022 © Donald Mok'
+
 async function buildBlogRSS() {
-  const files = await fg('src/posts/*.md')
+  const files = await fg('src/blog/*.md')
 
   const options: FeedOptions = {
-    author: AUTHOR,
-    title: 'DonaldxBlog',
-    id: 'https://donaldxdonald.xyz/',
-    link: 'https://donaldxdonald.xyz/',
+    copyright: COPY_RIGHT,
+    title: 'Donald x Blog',
+    id: 'https://donaldxdonald.xyz/blog',
+    link: 'https://donaldxdonald.xyz/blog',
     description: `It's all about Donald Mok's Blog`,
-    copyright: 'CC BY-NC-SA 4.0 2022 © Donald Mok',
-    feedLinks: {
-      json: 'https://donaldxdonald.xyz/feed.json',
-      atom: 'https://donaldxdonald.xyz/feed.atom',
-      rss: 'https://donaldxdonald.xyz/feed.xml',
-    },
   }
 
   const posts: Item[] = (await Promise.all(
     files
-      .filter(fp => !fp.toLowerCase().includes('weekly'))
       .map(async filePath => {
         const md = await readFile(filePath, 'utf-8')
         const { data, content } = matter(md)
@@ -55,7 +50,6 @@ async function buildBlogRSS() {
           author: [AUTHOR],
           content: html,
           link: DOMAIN + filePath
-            .replace(/^src\/posts\/(.+)\.md$/, '/post/$1')
             .toLowerCase(),
         } as Item
       }),
@@ -63,11 +57,53 @@ async function buildBlogRSS() {
 
   posts.sort((a, b) => +new Date(b.date) - +new Date(a.date))
 
-  await writeFeed('feed', posts, options)
+  await writeFeed('blog', posts, options)
+}
+
+async function buildWeeklyRSS() {
+  const files = await fg('src/weekly/*.md')
+
+  const options: FeedOptions = {
+    copyright: COPY_RIGHT,
+    title: 'Donald x Weekly',
+    id: 'https://donaldxdonald.xyz/weekly',
+    link: 'https://donaldxdonald.xyz/weekly',
+    description: `What a Donald Mok's week!`,
+  }
+
+  const posts: Item[] = (await Promise.all(
+    files
+      .map(async filePath => {
+        const md = await readFile(filePath, 'utf-8')
+        const { data, content } = matter(md)
+
+        const { title, date = Date.now() } = data as Frontmatter
+
+        const html = mdParser.render(content)
+
+        return {
+          title,
+          date: new Date(date),
+          author: [AUTHOR],
+          content: html,
+          link: DOMAIN + filePath
+            .toLowerCase(),
+        } as Item
+      }),
+  )).filter(Boolean)
+
+  posts.sort((a, b) => +new Date(b.date) - +new Date(a.date))
+
+  await writeFeed('weekly', posts, options)
 }
 
 async function writeFeed(name: string, items: Item[], options: FeedOptions) {
   options.author = AUTHOR
+  options.feedLinks = {
+    json: `https://donaldxdonald.xyz/${name}.json`,
+    atom: `https://donaldxdonald.xyz/${name}.atom`,
+    rss: `https://donaldxdonald.xyz/${name}.xml`,
+  }
 
   const feed = new Feed(options)
 
@@ -83,6 +119,7 @@ async function writeFeed(name: string, items: Item[], options: FeedOptions) {
 
 async function main() {
   await buildBlogRSS()
+  await buildWeeklyRSS()
 }
 
 main()

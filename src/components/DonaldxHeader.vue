@@ -22,7 +22,10 @@ const crossOver = useCrossOverStore()
         {{ crossOver.crossingItem.type }}
       </router-link>
     </div>
-    <a href="./feed.xml">
+    <a
+      v-if="crossOver.crossingItem.rssFeedName"
+      :href="`/${crossOver.crossingItem.rssFeedName}.xml`"
+    >
       <mdi-rss class="mx-1" />
     </a>
   </header>
@@ -30,7 +33,7 @@ const crossOver = useCrossOverStore()
 
 <style scoped>
 .link {
-  @apply cursor-pointer font-italic text-theme;
+  @apply cursor-pointer font-italic text-theme/80;
 }
 
 .title-text {

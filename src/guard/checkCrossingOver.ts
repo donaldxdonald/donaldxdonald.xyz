@@ -6,7 +6,7 @@ export const setup = (router: Router) => {
 
   router.beforeEach((to, from, next) => {
     for (const item of crossOver.crossOverItems) {
-      if (item.href === to.path) {
+      if (item.href !== '/' && to.path.startsWith(item.href)) {
         crossOver.setCrossingItem(item)
         break
       }

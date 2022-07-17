@@ -32,7 +32,10 @@ export default defineConfig({
           dir: 'src/pages', baseRoute: '',
         },
         {
-          dir: 'src/posts', baseRoute: '/post',
+          dir: 'src/blog', baseRoute: '/blog',
+        },
+        {
+          dir: 'src/weekly', baseRoute: '/weekly',
         },
       ],
       extendRoute(route) {

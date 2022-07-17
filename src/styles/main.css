@@ -54,7 +54,8 @@
 }
 
 .prose-layout {
-  @apply w-4/5 xl:w-2/3 lg:w-3/5 md:w-4/5 sm:w-3/5;
+  max-width: 65ch;
+  @apply w-4/5 xl:w-1/2 lg:w-3/5 md:w-4/5 sm:w-3/5;
 }
 
 .text-ellipsis {

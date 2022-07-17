@@ -34,6 +34,7 @@ export interface PostBlock {
 export type CrossOverItem = {
   type: CrossOverType
   href: string
+  rssFeedName?: string
 }
 
 export interface Frontmatter {

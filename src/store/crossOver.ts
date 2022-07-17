@@ -10,11 +10,13 @@ export const useCrossOverStore = defineStore('crossOver', () => {
     },
     {
       type: CrossOverType.BLOG,
-      href: '/posts',
+      href: '/blog',
+      rssFeedName: 'blog',
     },
     {
       type: CrossOverType.WEEKLY,
       href: '/weekly',
+      rssFeedName: 'weekly',
     },
   ])
 

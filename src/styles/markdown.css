@@ -14,7 +14,7 @@ code[class*=language-] {
 }
 
 .prose h1 {
-  @apply text-3xl font-extrabold text-theme;
+  @apply text-3xl font-extrabold text-theme mb-0 mt-5;
 }
 
 .prose h1 strong {
