@@ -11,6 +11,7 @@ import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-vue-markdown'
+import { slugify } from './scripts/slugify'
 
 export default defineConfig({
   resolve: {
@@ -26,7 +27,6 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
-      nuxtStyle: true,
       dirs: [
         {
           dir: 'src/pages', baseRoute: '',
@@ -84,7 +84,6 @@ export default defineConfig({
           plugins: ['show-language'],
         })
         md.use(LinkAttributes, {
-          pattern: /a/,
           matcher: (link: string) => /^https?:\/\//.test(link),
           attrs: {
             target: '_blank',
@@ -92,9 +91,9 @@ export default defineConfig({
           },
         })
         md.use(anchor, {
-          permalink: anchor.permalink.linkInsideHeader({
+          slugify,
+          permalink: anchor.permalink.ariaHidden({
             symbol: '#',
-            renderAttrs: () => ({ 'aria-hidden': 'true' }),
           }),
         })
       },

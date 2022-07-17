@@ -4,12 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
 ::-webkit-scrollbar {
-  @apply bg-purple-100 w-1;
+  @apply bg-purple-100 w-1 h-2;
 }
 
 ::-webkit-scrollbar-thumb {
