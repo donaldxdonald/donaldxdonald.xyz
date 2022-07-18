@@ -8,13 +8,12 @@ module.exports = {
     './src/**/*.{vue,js,ts}',
   ],
   theme: {
-    fontFamily: {
+    fontFamily: theme => ({
       sans: ['Jost', 'Noto Sans', ...sansBase],
       serif: ['Consolas', ...serifBase],
       title: ['Agency FB', 'Bahnschrift Light', ...sansBase],
-      italic: ['Cascadia Code PL Italic', ...sansBase],
       mono: ['PT Mono', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
-    },
+    }),
     extend: {
       screens: {
         xs: '393px',

@@ -1,18 +1,30 @@
 <script setup lang="ts">
 import { useEventListener } from '@vueuse/core'
+import { useHead } from '@vueuse/head'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { Frontmatter } from '~/types'
 import { formatDate } from '~/utils/utils'
 import DonaldxHeader from './DonaldxHeader.vue'
 
-defineProps<{
+const props = defineProps<{
   frontmatter: Frontmatter
 }>()
 
 const content = ref<HTMLDivElement>()
 
 const router = useRouter()
+
+useHead({
+  title: props.frontmatter.title,
+  meta: [
+    { name: 'og:title', content: props.frontmatter.title },
+    { name: 'og:description', content: `快来一下看看${props.frontmatter.title}` },
+    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:title', content: props.frontmatter.title },
+    { name: 'description', content: `快来一下看看${props.frontmatter.title}` },
+  ],
+})
 
 onMounted(() => {
   const navigate = () => {

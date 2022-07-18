@@ -1,5 +1,5 @@
 ---
-title: 'DonaldxWeekly #12: 只有 Chromium 的 Web 会是什么样子？'
+title: '#12: 只有 Chromium 的 Web 会是什么样子？'
 date: 2022-07-03 22:22
 ---
 

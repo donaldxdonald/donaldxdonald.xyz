@@ -91,7 +91,7 @@ const keywords: Record<number, Keyword> = reactive({
     class="mt-20 flex flex-col justify-center items-center"
     :style="{ color: textColor }"
   >
-    <div class="font-title hover:font-italic cursor-default text-4xl leading-normal mb-10">
+    <div class="font-title hover:font-mono hover:italic cursor-default text-4xl leading-normal mb-10">
       DonaldxDonald
     </div>
     <div class="context-wrap max-w-sm main-layout font-sans">

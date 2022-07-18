@@ -6,6 +6,10 @@ import { useHead } from '@vueuse/head'
 useHead({
   title: 'DonaldxDonald',
   meta: [
+    { name: 'og:title', content: 'DonaldxDonald' },
+    { name: 'og:description', content: 'Hi there, here is Donald Mok\'s block~' },
+    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:title', content: 'DonaldxDonald' },
     { name: 'description', content: 'Hi there, here is Donald Mok\'s block~' },
   ],
 })

@@ -25,6 +25,7 @@ const crossOver = useCrossOverStore()
     <a
       v-if="crossOver.crossingItem.rssFeedName"
       :href="`/${crossOver.crossingItem.rssFeedName}.xml`"
+      class="hover:bg-theme hover:text-white py-1 bg-white rounded transition-all"
     >
       <mdi-rss class="mx-1" />
     </a>
@@ -33,7 +34,7 @@ const crossOver = useCrossOverStore()
 
 <style scoped>
 .link {
-  @apply cursor-pointer font-italic text-theme/80;
+  @apply cursor-pointer font-mono italic text-theme/80 hover:border-b-2 hover:border-theme transition-all;
 }
 
 .title-text {
