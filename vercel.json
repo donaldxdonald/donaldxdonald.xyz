@@ -1,0 +1,22 @@
+{
+  "rewrites": [
+    {
+      "source": "/post/**/:target*",
+      "destination": "/blog/:target*"
+    },
+    {
+      "source": "/post/**/:target*",
+      "has": {
+        "type": "host",
+        "value": "weekly"
+      },
+      "destination": "/weekly/:target*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/posts",
+      "destination": "/blog"
+    }
+  ]
+}

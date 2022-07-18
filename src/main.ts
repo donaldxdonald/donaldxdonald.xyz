@@ -21,6 +21,11 @@ export const createApp = ViteSSG(
     scrollBehavior,
   },
   ctx => {
+    ctx.router.addRoute('/', {
+      path: '/:pathMatch(.*)*',
+      redirect: '/',
+    })
+
     Object.values(import.meta.globEager<{ install: UserModule }>('./modules/*.ts'))
       .forEach(m => m.install(ctx))
 
