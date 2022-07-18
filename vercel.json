@@ -6,10 +6,12 @@
     },
     {
       "source": "/post/**/:target*",
-      "has": {
-        "type": "host",
-        "value": "weekly"
-      },
+      "has": [
+        {
+          "type": "host",
+          "value": "weekly"
+        }
+      ],
       "destination": "/weekly/:target*"
     }
   ],
