@@ -25,7 +25,7 @@ date: 2022-07-24 23:27
     > 一些写 Angular 组件的推荐做法（最佳实践）
 
 
-- [Avoiding <img> layout shifts: aspect-ratio vs width & height attributes](https://jakearchibald.com/2022/img-aspect-ratio/)
+- [Avoiding `<img>` layout shifts: aspect-ratio vs width & height attributes](https://jakearchibald.com/2022/img-aspect-ratio/)
     
     > 一些使用 img 标签的小技巧～
 
