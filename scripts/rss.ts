@@ -13,7 +13,7 @@ const mdParser = new MarkdownIt({
   breaks: true,
 })
 
-const DOMAIN = 'https://donaldxdonald.xyz'
+const DOMAIN = 'https://donaldxdonald.xyz/'
 
 const AUTHOR: Author = {
   name: 'Donald Mok',
