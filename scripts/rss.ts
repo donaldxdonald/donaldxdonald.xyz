@@ -49,8 +49,7 @@ async function buildBlogRSS() {
           date: new Date(date),
           author: [AUTHOR],
           content: html,
-          link: DOMAIN + filePath
-            .toLowerCase(),
+          link: DOMAIN + filePath.toLowerCase().replace(/\/src\/(.*)\.md/, '/$1'),
         } as Item
       }),
   )).filter(Boolean)
@@ -86,8 +85,7 @@ async function buildWeeklyRSS() {
           date: new Date(date),
           author: [AUTHOR],
           content: html,
-          link: DOMAIN + filePath
-            .toLowerCase(),
+          link: DOMAIN + filePath.toLowerCase().replace(/\/src\/(.*)\.md/, '/$1'),
         } as Item
       }),
   )).filter(Boolean)
