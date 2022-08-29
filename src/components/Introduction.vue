@@ -41,8 +41,8 @@ const contactList: Contact[] = reactive([
   },
   {
     icon: 'mdi-email-outline',
-    text: 'mzhlovefama@hotmail.com',
-    link: 'mailto:mzhlovefama@hotmail.com',
+    text: 'donaldxdonald@duck.com',
+    link: 'mailto:donaldxdonald@duck.com',
   },
 ])
 
