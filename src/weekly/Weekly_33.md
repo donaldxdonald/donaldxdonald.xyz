@@ -31,7 +31,12 @@ date: 2022-12-04 22:25
   
     > 开源的白板工具 tldraw 近日获得了 270 万美元的融资。文章中也介绍到不少基于 tldraw 开发的其他产品，tldraw 接下来的方向是提供更多二次开发的基础设施能力。
     
-    
+
+
+
+- [What Makes a Movie the Greatest of All Time?](https://www.nytimes.com/interactive/2022/12/02/arts/sight-and-sound-best-movies-of-all-time.html)
+
+  > New York Times 将《视与听》新十年的十佳电影以及过去的榜单数据做了可视化呈现，很好看。
 
 ## Tools
 
@@ -39,8 +44,8 @@ date: 2022-12-04 22:25
   
     > 基于 IPFS 协议的去中心化 ZLibrary 资源搜索工具，仅提供搜索功能，没有中心服务器，有人搭就有资源。
     
-  
-  
+
+
 - [Metatags API](https://dub.sh/metatags)
   
     > 一个小工具，快速获取对应网站的 meta 信息。
