@@ -41,6 +41,8 @@ export interface Frontmatter {
   title: string
   date?: string
   display?: string
+  description?: string
+  image?: string
 }
 
 declare module 'vue-router' {
