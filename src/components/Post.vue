@@ -18,10 +18,9 @@ const router = useRouter()
 useHead({
   title: props.frontmatter.title,
   meta: [
-    { name: 'og:title', content: props.frontmatter.title },
-    { name: 'og:description', content: props.frontmatter.description ?? `快来一下看看${props.frontmatter.title}` },
-    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: props.frontmatter.title },
+    { name: 'twitter:image', content: props.frontmatter.image },
     { name: 'description', content: props.frontmatter.description ?? `快来一下看看${props.frontmatter.title}` },
     { name: 'image', content: props.frontmatter.image },
   ],
