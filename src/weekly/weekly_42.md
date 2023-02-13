@@ -11,7 +11,7 @@ date: 2023-02-12 23:44
 - GitHub 裁了 [10% 的员工](https://twitter.com/webology/status/1623722731819659269)并且砍掉了所有线下办公室，完全远程。
 - GitLab 裁了 [7% 的员工](https://about.gitlab.com/blog/2023/02/09/gitlab-news/)。
 - Zoom 裁了 [15% 的员工](https://blog.zoom.us/a-message-from-eric-yuan-ceo-of-zoom/)。
-- 由于通货膨胀，任天堂将会给员工的基本工资提高 10%。（？画风不一
+- 由于通货膨胀，任天堂将会给员工的基本工资[提高 10%](https://www.gamespot.com/articles/nintendo-will-pay-its-workers-10-more/1100-6511268/)。（？画风不一
 - Google 和 Mozilla 正在开发[非 WebKit-based](https://www.theregister.com/2023/02/07/mozilla_google_apple_webkit) 的 iOS 浏览器 App。
 - Figma 开始布局亚洲了，在新加坡[开了办公室](https://www.xiaohongshu.com/explore/63deef7e000000001b01fb1b)。
 - Honeypot 出品的 React 纪录片放出 [▶️ 完整视频。](https://www.youtube.com/watch?v=8pDqJVdNa44)
